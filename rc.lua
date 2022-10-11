@@ -179,8 +179,8 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.top_wibox = awful.wibar({ position = "top", screen = s, height = 28 })
-    s.bottom_wibox = awful.wibar({ position = "bottom", screen = s, height = 24 })
+    s.top_wibox = awful.wibar({ position = "top", screen = s, height = 22 })
+    s.bottom_wibox = awful.wibar({ position = "bottom", screen = s, height = 28 })
 
     s.top_wibox:setup {
         layout = wibox.layout.align.horizontal,
