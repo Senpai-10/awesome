@@ -423,6 +423,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "space", function () awful.spawn("change_layout") end,
               {description = "change keyboard layout", group = "awesome"}),
 
+    awful.key({ modkey, "Shift" }, "e", function () awful.spawn("easy_edit") end,
+              {description = "Show list of files/dir to open in $EDITOR", group = "awesome"}),
+
     -- Prompt
     -- awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
     --           {description = "run prompt", group = "launcher"}),
