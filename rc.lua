@@ -104,7 +104,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("%A %F,%l:%M:%S %P ", 1)
+mytextclock = wibox.widget.textclock("%A %F, %l:%M:%S %P ", 1)
 
 local separator = wibox.widget.textbox(' | ')
 
@@ -152,7 +152,7 @@ local tasklist_buttons = gears.table.join(
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }, s, awful.layout.layouts[1])
+    awful.tag({ " 1 ", " 2 ", " 3 " }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -655,13 +655,13 @@ awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
 
-    { rule = { class = "discord" },
-        properties = { screen = 1, tag = "9" }
-    },
+--     { rule = { class = "discord" },
+--         properties = { screen = 1, tag = "9" }
+--     },
 
-    { rule = { class = "spotify" },
-        properties = { screen = 1, tag = "8" }
-    },
+--     { rule = { class = "spotify" },
+--         properties = { screen = 1= "8" }
+--     },
 
     { rule = { class = "mpv" },
         properties = { floating = true, fullscreen = true }
