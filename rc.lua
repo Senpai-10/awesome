@@ -240,7 +240,8 @@ end
 local function add_tag()
     awful.tag.add(" NewTag ", {
         screen = awful.screen.focused(),
-        layout = awful.layout.suit.floating }):view_only()
+        layout = awful.layout.layouts[1] }):view_only()
+
 end
 
 -- Rename the current tag
