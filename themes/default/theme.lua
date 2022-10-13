@@ -8,11 +8,11 @@ local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
-local font_name = "Cascadia Code"
+local font_name = "Iosevka Nerd Font"
 
 local theme = {}
 
-theme.font          = font_name .. " 9"
+theme.font          = font_name .. " 11"
 
 theme.bg_normal     = "#0F0F12"
 -- socund background color #1E1E21
@@ -49,13 +49,14 @@ theme.border_marked = "#91231c"
 -- theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
-)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
-)
+
+-- local taglist_square_size = dpi(4)
+-- theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
+--     taglist_square_size, theme.fg_normal
+-- )
+-- theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
+--     taglist_square_size, theme.fg_normal
+-- )
 
 theme.taglist_fg_focus      = "#3D85FE"
 -- theme.taglist_fg_occupied   = "#EDEFF0"
@@ -64,7 +65,7 @@ theme.taglist_fg_urgent     = "#ED7572"
 theme.taglist_fg_empty      = "#585859"
 theme.taglist_fg_urgent     = "#FE3D3D"
 theme.taglist_spacing       = 0
-theme.taglist_font          = font_name .. " 10"
+theme.taglist_font          = font_name .. " 11"
 
 -- Variables set for theming notifications:
 -- notification_font

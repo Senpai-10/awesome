@@ -92,8 +92,8 @@ awful.layout.layouts = {
 
 local mymainmenu = require('lua.menus')
 
--- local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
---                                      menu = mymainmenu })
+local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+                                     menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -104,9 +104,9 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("%A %F, %l:%M:%S %P ", 1)
+mytextclock = wibox.widget.textclock("%A %F %l:%M:%S %P ", 1)
 
-local separator = wibox.widget.textbox(' | ')
+local separator = wibox.widget.textbox('  ')
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -197,28 +197,27 @@ awful.screen.connect_for_each_screen(function(s)
     -- Add widgets to the wibox
     s.bottom_wibox:setup {
         layout = wibox.layout.align.horizontal,
-        -- { -- Left widgets
-        --     layout = wibox.layout.fixed.horizontal,
-        --     -- mylauncher,
-        -- },
+        { -- Left widgets
+            layout = wibox.layout.fixed.horizontal,
+            mylauncher,
+        },
         -- s.mytasklist, -- Middle widget
-        nil,
         nil,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            awful.widget.watch('bash -c "stats updates | xargs printf \'updates %s\'"', 3600),
+            awful.widget.watch('bash -c "stats updates | xargs printf \'  %s\'"', 3600),
             separator,
             mykeyboardlayout,
             separator,
-            awful.widget.watch('bash -c "stats weather | xargs printf \'weather %s\' "', 120),
+            awful.widget.watch('bash -c "stats weather | xargs printf \'  %s\' "', 120),
             separator,
-            awful.widget.watch('bash -c "fmt-uptime | xargs printf \'uptime %s\' "', 15),
+            awful.widget.watch('bash -c "fmt-uptime | xargs printf \'神 %s\' "', 15),
             separator,
-            awful.widget.watch('bash -c "stats cpu-usage | xargs printf \'cpu usage %s%%\' "', 3),
+            awful.widget.watch('bash -c "stats cpu-usage | xargs printf \' %s%%\' "', 3),
             separator,
-            awful.widget.watch('bash -c "stats cpu-temp | xargs printf \'cpu temp %s%%\' "', 3),
+            awful.widget.watch('bash -c "stats cpu-temp | xargs printf \' %s%%\' "', 3),
             separator,
-            awful.widget.watch('bash -c "stats ram-usage | xargs printf \'ram usage %s%%\'"', 3),
+            awful.widget.watch('bash -c "stats ram-usage | xargs printf \' %s%%\'"', 3),
             separator,
             mytextclock,
             wibox.widget.systray(),
