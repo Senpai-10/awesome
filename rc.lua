@@ -295,20 +295,21 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "t", add_tag,
+    awful.key({ modkey,           }, "a", add_tag,
               {description = "add a tag", group = "tag"}),
 
-    awful.key({ modkey, "Shift"   }, "t", delete_tag,
+    awful.key({ modkey, "Shift"   }, "a", delete_tag,
               {description = "delete the current tag", group = "tag"}),
 
-    awful.key({ modkey, "Control"   }, "t", move_to_new_tag,
+    awful.key({ modkey, "Control"   }, "a", move_to_new_tag,
               {description = "add a tag with the focused client", group = "tag"}),
 
-    awful.key({ modkey, "Mod1"   }, "t", copy_tag,
+    awful.key({ modkey, "Mod1"   }, "a", copy_tag,
               {description = "create a copy of the current tag", group = "tag"}),
 
     awful.key({ modkey, "Shift"   }, "r", rename_tag,
               {description = "rename the current tag", group = "tag"}),
+
 
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
