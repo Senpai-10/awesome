@@ -68,6 +68,8 @@ editor_cmd = terminal .. " -e " .. editor
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
+tag_icon = "  "
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
@@ -152,7 +154,7 @@ local tasklist_buttons = gears.table.join(
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    awful.tag({ " 1 ", " 2 ", " 3 " }, s, awful.layout.layouts[1])
+    awful.tag({ tag_icon, tag_icon, tag_icon, tag_icon, tag_icon, tag_icon, tag_icon, tag_icon, tag_icon }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -237,7 +239,7 @@ end
 
  -- Create a new tag at the end of the list
 local function add_tag()
-    awful.tag.add(" NewTag ", {
+    awful.tag.add(tag_icon, {
         screen = awful.screen.focused(),
         layout = awful.layout.layouts[1] }):view_only()
 
