@@ -257,8 +257,13 @@ local function rename_tag()
             if t then
                 -- padd inside tag name
                 --  e. g " 1 "
-                t.name = " " .. new_name .. " "
                 -- t.name = new_name
+
+                if new_name == "icon" then
+                    t.name = tag_icon
+                else
+                    t.name = " " .. new_name .. " "
+                end
             end
         end
     }
