@@ -68,7 +68,9 @@ editor_cmd = terminal .. " -e " .. editor
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
-tag_icon = "  "
+tag_icon = "  "
+-- tag_icon = "  "
+-- tag_icon_selected = "  "
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -678,6 +680,14 @@ awful.rules.rules = {
 -- }}}
 
 -- {{{ Signals
+
+-- tag.connect_signal("property::selected", function (tag)
+--     if tag.name == tag_icon then
+--         tag.name = tag_icon_selected
+--     end
+--     naughty.notify({text='some message'})
+-- end)
+
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
