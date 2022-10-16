@@ -214,7 +214,7 @@ awful.screen.connect_for_each_screen(function(s)
 			-- s.mytasklist, -- Middle widget
 			s.mytaglist,
 		},
-		nil,
+		s.mytasklist,
 	})
 
 	-- Add widgets to the wibox
