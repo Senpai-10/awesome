@@ -28,7 +28,7 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(0)
+theme.useless_gap   = dpi(5)
 theme.border_width  = dpi(1)
 -- theme.border_normal = "#000000"
 theme.border_normal  = "#535d6c"
@@ -62,7 +62,7 @@ theme.taglist_fg_focus      = "#3D85FE"
 -- theme.taglist_fg_occupied   = "#EDEFF0"
 theme.taglist_fg_occupied   = "#C7CBCC"
 theme.taglist_fg_urgent     = "#ED7572"
-theme.taglist_fg_empty      = "#585859"
+theme.taglist_fg_empty      = "#2f2f30"
 theme.taglist_fg_urgent     = "#FE3D3D"
 theme.taglist_spacing       = 0
 theme.taglist_font          = font_name .. " 11"
