@@ -32,8 +32,8 @@ theme.useless_gap   = dpi(5)
 theme.border_width  = dpi(1)
 -- theme.border_normal = "#000000"
 theme.border_normal  = "#535d6c"
-theme.border_focus = "#2366BD"
-theme.border_marked = "#91231c"
+theme.border_focus = "#B31D14"
+theme.border_marked = "#FFFFFF"
 
 -- There are other variable sets
 -- overriding the default one when

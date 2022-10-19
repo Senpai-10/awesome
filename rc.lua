@@ -234,7 +234,7 @@ awful.screen.connect_for_each_screen(function(s)
 			separator,
 			awful.widget.watch("bash -c \"stats weather | xargs printf '  %s' \"", 120),
 			separator,
-			awful.widget.watch("bash -c \"fmt-uptime | xargs printf '神 %s' \"", 15),
+			awful.widget.watch("bash -c \"stats uptime | xargs printf '神 %s' \"", 15),
 			separator,
 			awful.widget.watch("bash -c \"stats cpu-usage | xargs printf ' %s%%' \"", 3),
 			separator,
