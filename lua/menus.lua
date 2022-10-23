@@ -2,6 +2,9 @@ local awful = require("awful")
 
 local apps_menu = require("lua.submenus.apps_menu")
 local power_menu = require("lua.submenus.power_menu")
+-- Enable hotkeys help widget for VIM and other apps
+-- when client with a matching name is opened:
+-- require("awful.hotkeys_popup.keys")
 
 return awful.menu({
 	items = {
@@ -12,8 +15,8 @@ return awful.menu({
 				hotkeys_popup.show_help(nil, awful.screen.focused())
 			end,
 		},
-		{ "Open terminal", terminal },
-		{ "Manage todos", editor_cmd .. " /home/senpai/.todo" },
+		{ "Open terminal", TERMINAL },
+		{ "Manage todos", EDITOR_CMD .. " /home/senpai/.todo" },
 		{
 			"Restart imwheel",
 			function()
