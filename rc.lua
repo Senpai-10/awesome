@@ -460,7 +460,7 @@ globalkeys = gears.table.join(
 
 	-- change layout
 	awful.key({ modkey }, "space", function()
-		awful.spawn("change_layout")
+		awful.spawn.with_shell("~/scripts/./change_layout")
 	end, { description = "change keyboard layout", group = "awesome" }),
 
 	awful.key({ modkey, "Shift" }, "e", function()

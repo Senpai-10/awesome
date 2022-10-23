@@ -55,22 +55,4 @@ return {
 			awful.spawn("kitty")
 		end,
 	},
-	{
-		"nemo",
-		function()
-			awful.spawn("nemo")
-		end,
-	},
-    {
-		"spacefm",
-		function()
-			awful.spawn("spacefm")
-		end,
-	},
-    {
-		"pcmanfm",
-		function()
-			awful.spawn("pcmanfm")
-		end,
-	},
 }
