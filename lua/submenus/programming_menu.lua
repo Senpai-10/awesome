@@ -22,7 +22,7 @@ return {
 	{
 		"nvim",
 		function()
-			awful.spawn(terminal .. " -e nvim")
+			awful.spawn(TERMINAL .. " -e nvim")
 		end,
 	},
     {

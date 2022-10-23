@@ -12,8 +12,8 @@ return awful.menu({
 				hotkeys_popup.show_help(nil, awful.screen.focused())
 			end,
 		},
-		{ "Open terminal", terminal },
-		{ "Manage todos", editor_cmd .. " /home/senpai/.todo" },
+		{ "Open terminal", TERMINAL },
+		{ "Manage todos", EDITOR_CMD .. " /home/senpai/.todo" },
 		{
 			"Restart imwheel",
 			function()
