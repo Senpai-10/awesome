@@ -6,8 +6,6 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
--- Widget and layout library
-local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -70,9 +68,9 @@ EDITOR_CMD = TERMINAL .. " -e " .. EDITOR
 -- However, you can use another modifier like Mod1, but it may interact with others.
 MODKEY = "Mod4"
 
-TAG_ICON = "  "
+-- TAG_ICON = "  "
 -- TAG_ICON = "  "
--- TAG_ICON = "  "
+TAG_ICON = "  "
 -- TAG_ICON_SELECTED = "  "
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
