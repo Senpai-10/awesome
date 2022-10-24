@@ -60,6 +60,7 @@ return {
 				"AlarmWindow", -- Thunderbird's calendar.
 				"ConfigManager", -- Thunderbird's about:config.
 				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+                "simplescreenrecorder"
 			},
 		},
 		properties = { floating = true },

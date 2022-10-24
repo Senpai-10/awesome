@@ -70,7 +70,8 @@ EDITOR_CMD = TERMINAL .. " -e " .. EDITOR
 -- However, you can use another modifier like Mod1, but it may interact with others.
 MODKEY = "Mod4"
 
-TAG_ICON = "  "
+TAG_ICON = "  "
+-- TAG_ICON = "  "
 -- TAG_ICON = "  "
 -- TAG_ICON_SELECTED = "  "
 
