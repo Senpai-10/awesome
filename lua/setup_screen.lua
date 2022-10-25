@@ -83,15 +83,17 @@ function M.setup(s)
 	-- Add widgets to the wibox
 	s.bottom_wibox:setup({
 		layout = wibox.layout.align.horizontal,
-		{ -- Left widgets
-			layout = wibox.layout.fixed.horizontal,
-			mylauncher,
-		},
+		-- { -- Left widgets
+		-- 	layout = wibox.layout.fixed.horizontal,
+		-- 	mylauncher,
+		-- },
+        nil,
 		-- s.mytasklist, -- Middle widget
 		nil,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			awful.widget.watch("bash -c \"stats updates | xargs printf '  %s'\"", 3600),
+			separator,
+			awful.widget.watch("bash -c \"stats updates | xargs printf '  %s'\"", 1800),
 			separator,
 			mykeyboardlayout,
 			separator,
