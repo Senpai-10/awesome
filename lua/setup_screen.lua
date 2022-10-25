@@ -14,7 +14,8 @@ local mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 local mytextclock = wibox.widget.textclock("%A %F %l:%M:%S %P ", 1)
 
-local separator = wibox.widget.textbox("  ")
+-- local separator = wibox.widget.textbox(" ⏽ ")
+local separator = wibox.widget.textbox("  ")
 
 local taglist_buttons = require("lua.taglist_buttons")
 local tasklist_buttons = require("lua.tasklist_buttons")
