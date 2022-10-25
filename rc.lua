@@ -69,8 +69,8 @@ EDITOR_CMD = TERMINAL .. " -e " .. EDITOR
 MODKEY = "Mod4"
 
 -- TAG_ICON = "  "
--- TAG_ICON = "  "
-TAG_ICON = "  "
+TAG_ICON = "  "
+-- TAG_ICON = "  "
 -- TAG_ICON_SELECTED = "  "
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
