@@ -93,7 +93,7 @@ function M.setup(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			separator,
-			awful.widget.watch("bash -c \"stats updates | xargs printf '  %s'\"", 1800),
+			awful.widget.watch("bash -c \"stats updates\"", 1800),
 			separator,
 			mykeyboardlayout,
 			separator,
