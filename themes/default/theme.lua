@@ -77,10 +77,18 @@ theme.taglist_font          = font_name .. " 11"
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 
-theme.menu_bg_focus = "#2366BD"
-theme.menu_submenu_icon = themes_path.."default/submenu.png"
+-- theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
+theme.menu_border_color = "#2366BD"
+theme.menu_border_width = dpi(2)
+-- theme.menu_fg_focus = ""
+theme.menu_bg_focus = "#2366BD"
+-- theme.menu_fg_normal = ""
+-- theme.menu_bg_normal = ""
+-- theme.menu_submenu = " "
+theme.menu_submenu = " "
+-- theme.menu_submenu = " "
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -114,7 +122,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = themes_path.."default/background.png"
+-- theme.wallpaper = themes_path.."default/background.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
@@ -138,8 +146,6 @@ theme.layout_cornerse = themes_path.."default/layouts/cornersew.png"
 theme.awesome_icon = theme_assets.awesome_icon(
     theme.menu_height, theme.bg_focus, theme.fg_focus
 )
-
-theme.menu_border_width = 0
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
