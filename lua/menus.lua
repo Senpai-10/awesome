@@ -19,6 +19,12 @@ return awful.menu({
 		},
 		{ "Open terminal", TERMINAL },
 		{ "Manage todos", EDITOR_CMD .. " /home/senpai/.todo" },
+        {
+            "Run backup script",
+            function()
+                awful.spawn.with_shell(TERMINAL .. " -e " .. "~/.dotfiles/backup.py")
+            end
+        },
 		{
 			"Restart imwheel",
 			function()
