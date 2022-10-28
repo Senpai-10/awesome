@@ -67,6 +67,8 @@ theme.taglist_fg_urgent     = "#FE3D3D"
 theme.taglist_spacing       = 0
 theme.taglist_font          = font_name .. " 11"
 
+-- theme.tasklist_disable_task_name = true
+
 -- Variables set for theming notifications:
 -- notification_font
 -- notification_[bg|fg]

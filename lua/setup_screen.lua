@@ -62,6 +62,13 @@ function M.setup(s)
 		screen = s,
 		filter = awful.widget.tasklist.filter.currenttags,
 		buttons = tasklist_buttons,
+		layout = {
+			spacing = 5,
+
+			max_widget_size = awful.screen.focused().workarea.width * 0.12,
+
+			layout = wibox.layout.flex.horizontal,
+		},
 	})
 
 	-- Create the wibox
@@ -87,13 +94,13 @@ function M.setup(s)
 		-- 	layout = wibox.layout.fixed.horizontal,
 		-- 	mylauncher,
 		-- },
-        nil,
+		nil,
 		-- s.mytasklist, -- Middle widget
 		nil,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			separator,
-			awful.widget.watch("bash -c \"stats updates\"", 1800),
+			awful.widget.watch('bash -c "stats updates"', 1800),
 			separator,
 			mykeyboardlayout,
 			separator,
