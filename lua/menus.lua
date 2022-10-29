@@ -8,6 +8,28 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 -- require("awful.hotkeys_popup.keys")
 
+local open_files_menu = {
+    { "Open todos", EDITOR_CMD .. " /home/senpai/.todo" },
+    {
+        "Open vimwiki",
+        function()
+            awful.spawn.with_shell(EDITOR_CMD .. " ~/vimwiki/index.wiki")
+        end,
+    },
+    {
+        "Open awesome config",
+        function ()
+            awful.spawn.with_shell(EDITOR_CMD .. " ~/.config/awesome/")
+        end
+    },
+    {
+        "Open neovim config",
+        function ()
+            awful.spawn.with_shell(EDITOR_CMD .. " ~/.config/nvim/")
+        end
+    },
+}
+
 return awful.menu({
 	items = {
 		{ "Applications", apps_menu },
@@ -17,24 +39,11 @@ return awful.menu({
 				hotkeys_popup.show_help(nil, awful.screen.focused())
 			end,
 		},
-		{ "Open terminal", TERMINAL },
-		{ "Manage todos", EDITOR_CMD .. " /home/senpai/.todo" },
-		{
-			"Open vimwiki",
-			function()
-				awful.spawn.with_shell(TERMINAL .. " -e " .. EDITOR .. " ~/vimwiki/index.wiki")
-			end,
-		},
+		{ "Open in editor", open_files_menu },
 		{
 			"Run backup script",
 			function()
 				awful.spawn.with_shell(TERMINAL .. " -e " .. "~/.dotfiles/backup.py")
-			end,
-		},
-		{
-			"Restart imwheel",
-			function()
-				awful.spawn.with_shell("killall imwheel && imwheel -b 45")
 			end,
 		},
 		{ "Restart awesome", awesome.restart },
