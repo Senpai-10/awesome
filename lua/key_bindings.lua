@@ -9,7 +9,12 @@ local tag_management = require("lua.tag_management")
 local globalkeys = gears.table.join(
 	awful.key({ MODKEY }, "a", tag_management.add_tag, { description = "add a tag", group = "tag" }),
 
-	awful.key({ MODKEY, "Shift" }, "a", tag_management.delete_tag, { description = "delete the current tag", group = "tag" }),
+	awful.key(
+		{ MODKEY, "Shift" },
+		"a",
+		tag_management.delete_tag,
+		{ description = "delete the current tag", group = "tag" }
+	),
 
 	awful.key(
 		{ MODKEY, "Control" },
@@ -18,9 +23,19 @@ local globalkeys = gears.table.join(
 		{ description = "add a tag with the focused client", group = "tag" }
 	),
 
-	awful.key({ MODKEY, "Mod1" }, "a", tag_management.copy_tag, { description = "create a copy of the current tag", group = "tag" }),
+	awful.key(
+		{ MODKEY, "Mod1" },
+		"a",
+		tag_management.copy_tag,
+		{ description = "create a copy of the current tag", group = "tag" }
+	),
 
-	awful.key({ MODKEY, "Shift" }, "r", tag_management.rename_tag, { description = "rename the current tag", group = "tag" }),
+	awful.key(
+		{ MODKEY, "Shift" },
+		"r",
+		tag_management.rename_tag,
+		{ description = "rename the current tag", group = "tag" }
+	),
 
 	awful.key({ MODKEY }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 	awful.key({ MODKEY }, "[", awful.tag.viewprev, { description = "view previous", group = "tag" }),
@@ -36,6 +51,13 @@ local globalkeys = gears.table.join(
 	awful.key({ MODKEY }, "w", function()
 		mymainmenu:show()
 	end, { description = "show main menu", group = "awesome" }),
+
+	awful.key({ MODKEY }, "b", function()
+		for s in screen do
+            s.top_wibox.visible = not s.top_wibox.visible
+            s.bottom_wibox.visible = not s.bottom_wibox.visible
+		end
+	end, { description = "hide all bars", group = "awesome" }),
 
 	-- Layout manipulation
 	awful.key({ MODKEY, "Shift" }, "j", function()
