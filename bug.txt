@@ -1,0 +1,3 @@
+when full screening when bars are visable the client bottom gets cut
+
+but if you hide all wi bars and full screen it gives normal behaviar
