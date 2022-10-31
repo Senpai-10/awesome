@@ -2,11 +2,27 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local gears = require("gears")
 local awful = require("awful")
 local cyclefocus = require("cyclefocus")
+local beautiful = require("beautiful")
 local mymainmenu = require("lua.menus")
 
 local tag_management = require("lua.tag_management")
 
 local globalkeys = gears.table.join(
+	awful.key({ MODKEY, "Control", "Shift" }, 0, function()
+		local default_gap = beautiful.get().useless_gap
+		awful.tag.setgap(default_gap)
+	end, { description = "set gaps to default value", group = "awesome" }),
+
+	awful.key({ MODKEY, "Control" }, "=", function()
+		local current_gap = awful.tag.getgap()
+		awful.tag.setgap(current_gap + 1)
+	end, { description = "increase gaps", group = "awesome" }),
+
+	awful.key({ MODKEY, "Control" }, "-", function()
+		local current_gap = awful.tag.getgap()
+		awful.tag.setgap(current_gap - 1)
+	end, { description = "decrease gaps", group = "awesome" }),
+
 	awful.key({ MODKEY }, "a", tag_management.add_tag, { description = "add a tag", group = "tag" }),
 
 	awful.key(
@@ -54,8 +70,8 @@ local globalkeys = gears.table.join(
 
 	awful.key({ MODKEY }, "b", function()
 		for s in screen do
-            s.top_wibox.visible = not s.top_wibox.visible
-            s.bottom_wibox.visible = not s.bottom_wibox.visible
+			s.top_wibox.visible = not s.top_wibox.visible
+			s.bottom_wibox.visible = not s.bottom_wibox.visible
 		end
 	end, { description = "hide all bars", group = "awesome" }),
 
