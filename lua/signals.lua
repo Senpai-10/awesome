@@ -24,9 +24,7 @@ client.connect_signal("manage", function(c)
 	end
 
 	if c.floating then
-		awful.titlebar.show(c)
-	else
-		awful.titlebar.hide(c)
+        awful.titlebar.toggle(c)
 	end
 end)
 
