@@ -11,12 +11,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local open_files_menu = {
     { "Open todos", EDITOR_CMD .. " /home/senpai/.todo" },
     {
-        "Open vimwiki",
-        function()
-            awful.spawn.with_shell(EDITOR_CMD .. " ~/vimwiki/index.wiki")
-        end,
-    },
-    {
         "Open awesome config",
         function ()
             awful.spawn.with_shell(EDITOR_CMD .. " ~/.config/awesome/")
