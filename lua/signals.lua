@@ -23,9 +23,9 @@ client.connect_signal("manage", function(c)
 		awful.placement.no_offscreen(c)
 	end
 
-	if c.floating then
-        awful.titlebar.toggle(c)
-	end
+	-- if c.floating then
+        -- awful.titlebar.toggle(c)
+	-- end
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
