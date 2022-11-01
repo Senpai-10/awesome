@@ -1,11 +1,16 @@
 local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
-local beautiful = require("beautiful")
+local gfs = require("gears.filesystem")
+-- local beautiful = require("beautiful")
+-- local mymainmenu = require("lua.menus")
+-- local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
 
-local mymainmenu = require("lua.menus")
+local scripts_dir = gfs.get_xdg_config_home() .. "awesome/scripts/"
 
-local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
+local function get_script(name)
+    return scripts_dir .. name
+end
 
 -- Keyboard map indicator and switcher
 local mykeyboardlayout = awful.widget.keyboardlayout()
@@ -100,19 +105,19 @@ function M.setup(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			separator,
-			awful.widget.watch('bash -c "stats updates"', 1800),
+			awful.widget.watch("bash -c " .. get_script("updates.sh"), 1800),
 			separator,
 			mykeyboardlayout,
 			separator,
-			awful.widget.watch("bash -c weather", 120),
+			awful.widget.watch("bash -c " .. get_script("weather.sh"), 120),
 			separator,
-			awful.widget.watch("bash -c \"stats uptime | xargs printf '神 %s' \"", 15),
+			awful.widget.watch("bash -c " .. get_script("uptime.sh"), 15),
 			separator,
-			awful.widget.watch("bash -c \"stats cpu-usage | xargs printf ' %s%%' \"", 3),
+			awful.widget.watch("bash -c " .. get_script("cpu-usage.sh"), 3),
 			separator,
-			awful.widget.watch("bash -c \"stats cpu-temp | xargs printf ' %s%%' \"", 3),
+			awful.widget.watch("bash -c " .. get_script("cpu-temp.sh"), 3),
 			separator,
-			awful.widget.watch("bash -c \"stats ram-usage | xargs printf ' %s%%'\"", 3),
+			awful.widget.watch("bash -c " .. get_script("ram-usage.sh"), 3),
 			separator,
 			mytextclock,
 			wibox.widget.systray(),
