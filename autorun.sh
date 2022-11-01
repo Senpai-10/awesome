@@ -8,7 +8,6 @@ run() {
 }
 
 run_or_restart() {
-    notify-send "Awesome autorun" "Restarting $1"
     killall "$1"
 
     "${@:2}"&
