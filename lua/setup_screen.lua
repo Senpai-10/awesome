@@ -104,6 +104,7 @@ function M.setup(s)
 		nil,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+            awful.widget.watch("bash -c " .. get_script("network.sh"), 300),
 			separator,
 			awful.widget.watch("bash -c " .. get_script("updates.sh"), 1800),
 			separator,
