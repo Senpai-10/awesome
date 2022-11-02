@@ -35,6 +35,9 @@ theme.border_normal  = "#535d6c"
 theme.border_focus = "#3D85FE"
 theme.border_marked = "#FFFFFF"
 
+theme.widget_bg = "#3D85FE"
+theme.widget_fg = "#1f1f1f"
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
