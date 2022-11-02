@@ -11,8 +11,6 @@ function M.setup(screen)
 		screen.mypromptbox,
 		{
 			layout = wibox.layout.align.horizontal,
-
-			-- s.mytasklist, -- Middle widget
 			screen.mytaglist,
 		},
 		screen.mytasklist,

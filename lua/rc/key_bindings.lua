@@ -3,9 +3,9 @@ local gears = require("gears")
 local awful = require("awful")
 local cyclefocus = require("cyclefocus")
 local beautiful = require("beautiful")
-local mymainmenu = require("lua.menus")
+local mymainmenu = require("lua.rc.menus")
 
-local tag_management = require("lua.tag_management")
+local tag_management = require("lua.rc.tag_management")
 
 local globalkeys = gears.table.join(
 	awful.key({ MODKEY, "Control", "Shift" }, 0, function()
@@ -70,8 +70,13 @@ local globalkeys = gears.table.join(
 
 	awful.key({ MODKEY }, "b", function()
 		for s in screen do
-			s.top_wibox.visible = not s.top_wibox.visible
-			s.bottom_wibox.visible = not s.bottom_wibox.visible
+            if s.top_wibox then
+                s.top_wibox.visible = not s.top_wibox.visible
+            end
+
+            if s.bottom_wibox then
+                s.bottom_wibox.visible = not s.bottom_wibox.visible
+            end
 		end
 	end, { description = "hide all bars", group = "awesome" }),
 
@@ -189,7 +194,7 @@ local globalkeys = gears.table.join(
 			exe_callback = awful.util.eval,
 			history_path = awful.util.get_cache_dir() .. "/history_eval",
 		})
-	end, { description = "lua execute prompt", group = "awesome" }),
+	end, { description = "lua.rc.execute prompt", group = "awesome" }),
 	-- Menubar
 	awful.key({ MODKEY }, "r", function()
 		awful.spawn("dmenu_run")

@@ -1,5 +1,5 @@
 ---------------------------
--- default awesome theme --
+-- My main awesome theme --
 ---------------------------
 
 local theme_assets = require("beautiful.theme_assets")
@@ -37,6 +37,10 @@ theme.border_marked = "#FFFFFF"
 
 theme.widget_bg = "#3D85FE"
 theme.widget_fg = "#1f1f1f"
+
+-- theme.widget_separator = " ⏽ "
+-- theme.widget_separator = "  "
+theme.widget_separator = " "
 
 -- There are other variable sets
 -- overriding the default one when

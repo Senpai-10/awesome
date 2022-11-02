@@ -1,9 +1,10 @@
 local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
+local beautiful = require("beautiful")
 
-local taglist_buttons = require("lua.taglist_buttons")
-local tasklist_buttons = require("lua.tasklist_buttons")
+local taglist_buttons = require("lua.rc.taglist_buttons")
+local tasklist_buttons = require("lua.rc.tasklist_buttons")
 
 local M = {}
 
@@ -56,8 +57,10 @@ function M.setup(s)
 		},
 	})
 
-    require("lua.wiboxs.top_wibox").setup(s)
-    require("lua.wiboxs.bottom_wibox").setup(s)
+    s.separator = wibox.widget.textbox(beautiful.widget_separator)
+
+    require("lua.rc.wiboxs.top_wibox").setup(s)
+    require("lua.rc.wiboxs.bottom_wibox").setup(s)
 end
 
 return M

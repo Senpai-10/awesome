@@ -1,8 +1,8 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
-local clientkeys = require("lua.client_keys")
+local clientkeys = require("lua.rc.client_keys")
 
-local clientbuttons = require("lua.client_buttons")
+local clientbuttons = require("lua.rc.client_buttons")
 
 return {
 	-- All clients will match this rule.

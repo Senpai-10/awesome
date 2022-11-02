@@ -94,14 +94,14 @@ awful.layout.layouts = {
 }
 -- }}}
 
-local mymainmenu = require("lua.menus")
+local mymainmenu = require("lua.rc.menus")
 
 -- Menubar configuration
 menubar.utils.terminal = TERMINAL -- Set the terminal for applications that require it
 -- }}}
 
 -- Create a wibox for each screen and add it
-awful.screen.connect_for_each_screen(require("lua.setup_screen").setup)
+awful.screen.connect_for_each_screen(require("lua.rc.setup_screen").setup)
 -- }}}
 
 -- {{{ Mouse bindings
@@ -115,7 +115,7 @@ root.buttons(gears.table.join(
 -- }}}
 
 -- {{{ Key bindings
-local globalkeys = require("lua.key_bindings")
+local globalkeys = require("lua.rc.key_bindings")
 -- }}}
 
 -- Set keys
@@ -124,10 +124,10 @@ root.keys(globalkeys)
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
-awful.rules.rules = require("lua.client_rules")
+awful.rules.rules = require("lua.rc.client_rules")
 -- }}}
 
-require("lua.signals")
+require("lua.rc.signals")
 
 -- Autostart Apps
 awful.spawn.with_shell(gears.filesystem.get_configuration_dir() .. "autorun.sh")
