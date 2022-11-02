@@ -12,26 +12,26 @@ local font_name = "Iosevka Nerd Font"
 
 local theme = {}
 
-theme.font          = font_name .. " 11"
+theme.font = font_name .. " 11"
 
-theme.bg_normal     = "#0F0F12"
+theme.bg_normal = "#0F0F12"
 -- socund background color #1E1E21
 
-theme.bg_focus      = "#1E1E21"
+theme.bg_focus = "#1E1E21"
 --theme.wibar.bg =
 --theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
+theme.bg_minimize = "#444444"
+theme.bg_systray = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal = "#aaaaaa"
+theme.fg_focus = "#ffffff"
+theme.fg_urgent = "#ffffff"
+theme.fg_minimize = "#ffffff"
 
-theme.useless_gap   = dpi(5)
-theme.border_width  = dpi(1)
+theme.useless_gap = dpi(5)
+theme.border_width = dpi(1)
 -- theme.border_normal = "#000000"
-theme.border_normal  = "#535d6c"
+theme.border_normal = "#535d6c"
 theme.border_focus = "#3D85FE"
 theme.border_marked = "#FFFFFF"
 
@@ -61,14 +61,14 @@ theme.widget_fg = "#1f1f1f"
 --     taglist_square_size, theme.fg_normal
 -- )
 
-theme.taglist_fg_focus      = "#3D85FE"
+theme.taglist_fg_focus = "#3D85FE"
 -- theme.taglist_fg_occupied   = "#EDEFF0"
-theme.taglist_fg_occupied   = "#C7CBCC"
-theme.taglist_fg_urgent     = "#ED7572"
-theme.taglist_fg_empty      = "#2f2f30"
-theme.taglist_fg_urgent     = "#FE3D3D"
-theme.taglist_spacing       = 0
-theme.taglist_font          = font_name .. " 11"
+theme.taglist_fg_occupied = "#C7CBCC"
+theme.taglist_fg_urgent = "#ED7572"
+theme.taglist_fg_empty = "#2f2f30"
+theme.taglist_fg_urgent = "#FE3D3D"
+theme.taglist_spacing = 0
+theme.taglist_font = font_name .. " 11"
 
 -- theme.tasklist_disable_task_name = true
 
@@ -84,7 +84,7 @@ theme.taglist_font          = font_name .. " 11"
 
 -- theme.menu_submenu_icon = themes_path.."main/submenu.png"
 theme.menu_height = dpi(15)
-theme.menu_width  = dpi(100)
+theme.menu_width = dpi(100)
 theme.menu_border_color = "#2366BD"
 theme.menu_border_width = dpi(1)
 -- theme.menu_fg_focus = ""
@@ -101,54 +101,52 @@ theme.menu_submenu = " "
 --theme.bg_widget = "#cc0000"
 
 -- Define the image to load
-theme.titlebar_close_button_normal = themes_path.."main/titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = themes_path.."main/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = themes_path .. "main/titlebar/close_normal.png"
+theme.titlebar_close_button_focus = themes_path .. "main/titlebar/close_focus.png"
 
-theme.titlebar_minimize_button_normal = themes_path.."main/titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus  = themes_path.."main/titlebar/minimize_focus.png"
+theme.titlebar_minimize_button_normal = themes_path .. "main/titlebar/minimize_normal.png"
+theme.titlebar_minimize_button_focus = themes_path .. "main/titlebar/minimize_focus.png"
 
-theme.titlebar_ontop_button_normal_inactive = themes_path.."main/titlebar/ontop_normal_inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = themes_path.."main/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = themes_path.."main/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active  = themes_path.."main/titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_inactive = themes_path .. "main/titlebar/ontop_normal_inactive.png"
+theme.titlebar_ontop_button_focus_inactive = themes_path .. "main/titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_active = themes_path .. "main/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_active = themes_path .. "main/titlebar/ontop_focus_active.png"
 
-theme.titlebar_sticky_button_normal_inactive = themes_path.."main/titlebar/sticky_normal_inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = themes_path.."main/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = themes_path.."main/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active  = themes_path.."main/titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_inactive = themes_path .. "main/titlebar/sticky_normal_inactive.png"
+theme.titlebar_sticky_button_focus_inactive = themes_path .. "main/titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_active = themes_path .. "main/titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_active = themes_path .. "main/titlebar/sticky_focus_active.png"
 
-theme.titlebar_floating_button_normal_inactive = themes_path.."main/titlebar/floating_normal_inactive.png"
-theme.titlebar_floating_button_focus_inactive  = themes_path.."main/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_active = themes_path.."main/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_active  = themes_path.."main/titlebar/floating_focus_active.png"
+theme.titlebar_floating_button_normal_inactive = themes_path .. "main/titlebar/floating_normal_inactive.png"
+theme.titlebar_floating_button_focus_inactive = themes_path .. "main/titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_active = themes_path .. "main/titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_active = themes_path .. "main/titlebar/floating_focus_active.png"
 
-theme.titlebar_maximized_button_normal_inactive = themes_path.."main/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = themes_path.."main/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = themes_path.."main/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = themes_path.."main/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_inactive = themes_path .. "main/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_focus_inactive = themes_path .. "main/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_active = themes_path .. "main/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_active = themes_path .. "main/titlebar/maximized_focus_active.png"
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = themes_path.."main/layouts/fairhw.png"
-theme.layout_fairv = themes_path.."main/layouts/fairvw.png"
-theme.layout_floating  = themes_path.."main/layouts/floatingw.png"
-theme.layout_magnifier = themes_path.."main/layouts/magnifierw.png"
-theme.layout_max = themes_path.."main/layouts/maxw.png"
-theme.layout_fullscreen = themes_path.."main/layouts/fullscreenw.png"
-theme.layout_tilebottom = themes_path.."main/layouts/tilebottomw.png"
-theme.layout_tileleft   = themes_path.."main/layouts/tileleftw.png"
-theme.layout_tile = themes_path.."main/layouts/tilew.png"
-theme.layout_tiletop = themes_path.."main/layouts/tiletopw.png"
-theme.layout_spiral  = themes_path.."main/layouts/spiralw.png"
-theme.layout_dwindle = themes_path.."main/layouts/dwindlew.png"
-theme.layout_cornernw = themes_path.."main/layouts/cornernww.png"
-theme.layout_cornerne = themes_path.."main/layouts/cornernew.png"
-theme.layout_cornersw = themes_path.."main/layouts/cornersww.png"
-theme.layout_cornerse = themes_path.."main/layouts/cornersew.png"
+theme.layout_fairh = themes_path .. "main/layouts/fairhw.png"
+theme.layout_fairv = themes_path .. "main/layouts/fairvw.png"
+theme.layout_floating = themes_path .. "main/layouts/floatingw.png"
+theme.layout_magnifier = themes_path .. "main/layouts/magnifierw.png"
+theme.layout_max = themes_path .. "main/layouts/maxw.png"
+theme.layout_fullscreen = themes_path .. "main/layouts/fullscreenw.png"
+theme.layout_tilebottom = themes_path .. "main/layouts/tilebottomw.png"
+theme.layout_tileleft = themes_path .. "main/layouts/tileleftw.png"
+theme.layout_tile = themes_path .. "main/layouts/tilew.png"
+theme.layout_tiletop = themes_path .. "main/layouts/tiletopw.png"
+theme.layout_spiral = themes_path .. "main/layouts/spiralw.png"
+theme.layout_dwindle = themes_path .. "main/layouts/dwindlew.png"
+theme.layout_cornernw = themes_path .. "main/layouts/cornernww.png"
+theme.layout_cornerne = themes_path .. "main/layouts/cornernew.png"
+theme.layout_cornersw = themes_path .. "main/layouts/cornersww.png"
+theme.layout_cornerse = themes_path .. "main/layouts/cornersew.png"
 
 -- Generate Awesome icon:
-theme.awesome_icon = theme_assets.awesome_icon(
-    theme.menu_height, theme.bg_focus, theme.fg_focus
-)
+theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
