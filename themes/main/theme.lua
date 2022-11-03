@@ -15,10 +15,7 @@ local theme = {}
 theme.font = font_name .. " 11"
 
 theme.bg_normal = "#0F0F12"
--- socund background color #1E1E21
-
 theme.bg_focus = "#1E1E21"
---theme.wibar.bg =
 --theme.bg_urgent     = "#ff0000"
 theme.bg_minimize = "#444444"
 theme.bg_systray = theme.bg_normal
@@ -30,13 +27,12 @@ theme.fg_minimize = "#ffffff"
 
 theme.useless_gap = dpi(5)
 theme.border_width = dpi(1)
--- theme.border_normal = "#000000"
 theme.border_normal = "#535d6c"
 theme.border_focus = "#3D85FE"
 theme.border_marked = "#FFFFFF"
 
-theme.widget_bg = "#3D85FE"
-theme.widget_fg = "#1f1f1f"
+theme.widget_bg = "#17171A"
+theme.widget_fg = "#C7CBCC"
 
 -- theme.widget_separator = " ⏽ "
 -- theme.widget_separator = "  "

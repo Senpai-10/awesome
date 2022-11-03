@@ -17,7 +17,7 @@ M.widget = {
 		widget = wibox.container.margin,
 	},
 	fg = beautiful.widget_fg,
-	bg = "#7dbde8",
+    bg = beautiful.widget_bg,
 	widget = wibox.container.background,
 }
 

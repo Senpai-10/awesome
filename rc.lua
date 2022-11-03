@@ -68,7 +68,8 @@ EDITOR_CMD = TERMINAL .. " -e " .. EDITOR
 MODKEY = "Mod4"
 
 -- TAG_ICON = "  "
-TAG_ICON = "  "
+TAG_ICON = " ﰉ "
+-- TAG_ICON = "  "
 -- TAG_ICON = "  "
 -- TAG_ICON_SELECTED = "  "
 
