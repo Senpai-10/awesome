@@ -67,11 +67,8 @@ EDITOR_CMD = TERMINAL .. " -e " .. EDITOR
 -- However, you can use another modifier like Mod1, but it may interact with others.
 MODKEY = "Mod4"
 
--- TAG_ICON = "  "
-TAG_ICON = "  "
--- TAG_ICON = "  "
--- TAG_ICON = "  "
--- TAG_ICON_SELECTED = "  "
+TAG_ICON = beautiful.tag_icon
+-- TAG_ICON_SELECTED = beautiful.tag_icon_selected
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -102,7 +99,7 @@ menubar.utils.terminal = TERMINAL -- Set the terminal for applications that requ
 -- }}}
 
 -- Create a wibox for each screen and add it
-awful.screen.connect_for_each_screen(require("lua.rc.setup_screen").setup)
+require("lua.rc.setup_screens")
 -- }}}
 
 -- {{{ Mouse bindings

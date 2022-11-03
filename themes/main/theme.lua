@@ -38,6 +38,14 @@ theme.widget_fg = "#C7CBCC"
 -- theme.widget_separator = "  "
 theme.widget_separator = " "
 
+
+theme.tag_icon = "  "
+-- theme.tag_icon = "  "
+-- theme.tag_icon = "  "
+-- theme.tag_icon = "  "
+-- theme.tag_icon_selected = "  "
+
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:

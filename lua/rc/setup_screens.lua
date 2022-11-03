@@ -6,9 +6,7 @@ local beautiful = require("beautiful")
 local taglist_buttons = require("lua.rc.taglist_buttons")
 local tasklist_buttons = require("lua.rc.tasklist_buttons")
 
-local M = {}
-
-function M.setup(s)
+awful.screen.connect_for_each_screen(function(s)
 	-- Each screen has its own tag table.
 	-- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 	awful.tag(
@@ -57,10 +55,9 @@ function M.setup(s)
 		},
 	})
 
-    s.separator = wibox.widget.textbox(beautiful.widget_separator)
+	s.separator = wibox.widget.textbox(beautiful.widget_separator)
 
-    require("lua.rc.wiboxs.top_wibox").setup(s)
-    require("lua.rc.wiboxs.bottom_wibox").setup(s)
-end
+	require("lua.rc.wiboxs.top_wibox").setup(s)
+	require("lua.rc.wiboxs.bottom_wibox").setup(s)
+end)
 
-return M
