@@ -8,7 +8,7 @@ local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_xdg_config_home() .. "awesome/themes/"
-local font_name = "Iosevka Nerd Font"
+local font_name = "Iosevka Storm"
 
 local theme = {}
 
@@ -39,11 +39,11 @@ theme.widget_fg = "#C7CBCC"
 theme.widget_separator = " "
 
 
-theme.tag_icon = "  "
--- theme.tag_icon = "  "
--- theme.tag_icon = "  "
--- theme.tag_icon = "  "
--- theme.tag_icon_selected = "  "
+theme.tag_icon = " " .. " " .. " "
+-- theme.tag_icon = "    "
+-- theme.tag_icon = "   "
+-- theme.tag_icon = "   "
+-- theme.tag_icon_selected = "   "
 
 
 -- There are other variable sets
