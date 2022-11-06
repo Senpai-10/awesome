@@ -8,12 +8,12 @@ local tasklist_buttons = require("lua.rc.tasklist_buttons")
 
 awful.screen.connect_for_each_screen(function(s)
 	-- Each screen has its own tag table.
-	-- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-	awful.tag(
-		{ TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON },
-		s,
-		awful.layout.layouts[1]
-	)
+	awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }, s, awful.layout.layouts[1])
+	-- awful.tag(
+	-- 	{ TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON },
+	-- 	s,
+	-- 	awful.layout.layouts[1]
+	-- )
 
 	-- Create a promptbox for each screen
 	s.mypromptbox = awful.widget.prompt()
