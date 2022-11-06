@@ -6,7 +6,7 @@
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
-
+local truncate_string = require("lua.helpers.truncate_string").truncate_string
 
 local M = {}
 
@@ -72,14 +72,8 @@ local function hook_cmus() --{{{
 			end
 
 			-- cut the string off it its more than 15 chars
-			if string.len(cmus_artist) > 15 then
-				cmus_artist = string.sub(cmus_artist, 1, 15)
-				cmus_artist = cmus_artist .. "..."
-			end
-			if string.len(cmus_title) > 15 then
-				cmus_title = string.sub(cmus_title, 1, 15)
-				cmus_title = cmus_title .. "..."
-			end
+			cmus_artist = truncate_string(cmus_artist, 15)
+            cmus_title = truncate_string(cmus_title, 15)
 
 			local cmus_curtime = string.gsub(string.match(cmus_info, "position %d*"), "position ", "")
 			local cmus_curtime_formated = math.floor(cmus_curtime / 60)
@@ -90,7 +84,6 @@ local function hook_cmus() --{{{
 				.. ":"
 				.. string.format("%02d", cmus_totaltime % 60)
 
-			-- cmus_title = string.format("%.5c", cmus_title)
 			cmus_string = cmus_artist
 				.. " - "
 				.. cmus_title
