@@ -24,7 +24,7 @@ client.connect_signal("manage", function(c)
 	end
 
 	-- if c.floating then
-        -- awful.titlebar.toggle(c)
+	-- awful.titlebar.toggle(c)
 	-- end
 end)
 
@@ -57,10 +57,11 @@ client.connect_signal("request::titlebars", function(c)
 			layout = wibox.layout.flex.horizontal,
 		},
 		{ -- Right
-			awful.titlebar.widget.floatingbutton(c),
+			-- awful.titlebar.widget.floatingbutton(c),
+			-- awful.titlebar.widget.stickybutton(c),
+			-- awful.titlebar.widget.ontopbutton(c),
+			awful.titlebar.widget.minimizebutton(c),
 			awful.titlebar.widget.maximizedbutton(c),
-			awful.titlebar.widget.stickybutton(c),
-			awful.titlebar.widget.ontopbutton(c),
 			awful.titlebar.widget.closebutton(c),
 			layout = wibox.layout.fixed.horizontal(),
 		},
@@ -82,12 +83,12 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 client.connect_signal("focus", function(c)
-    awful.titlebar.show(c)
+	awful.titlebar.show(c)
 	c.border_color = beautiful.border_focus
 end)
 
 client.connect_signal("unfocus", function(c)
-    awful.titlebar.hide(c)
+	awful.titlebar.hide(c)
 	c.border_color = beautiful.border_normal
 end)
 -- }}}
