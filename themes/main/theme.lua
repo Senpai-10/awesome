@@ -89,6 +89,8 @@ theme.taglist_font = font_name .. " 11"
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 
+theme.notification_border_color = theme.border_focus
+
 -- theme.menu_submenu_icon = themes_path.."main/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width = dpi(100)
