@@ -28,7 +28,7 @@ theme.fg_minimize = "#ffffff"
 theme.useless_gap = dpi(5)
 theme.border_width = dpi(1)
 theme.border_normal = "#535d6c"
-theme.border_focus = "#3D85FE"
+theme.border_focus = "#e8333f"
 theme.border_marked = "#FFFFFF"
 
 theme.widget_bg = "#17171A"
@@ -69,8 +69,9 @@ theme.tag_icon = " " .. " " .. " "
 --     taglist_square_size, theme.fg_normal
 -- )
 
-theme.taglist_fg_focus = "#3D85FE"
--- theme.taglist_fg_occupied   = "#EDEFF0"
+theme.taglist_fg_focus = "#fff"
+theme.taglist_bg_focus = "#e8333f"
+
 theme.taglist_fg_occupied = "#C7CBCC"
 theme.taglist_fg_urgent = "#ED7572"
 theme.taglist_fg_empty = "#2f2f30"
@@ -93,10 +94,10 @@ theme.taglist_font = font_name .. " 11"
 -- theme.menu_submenu_icon = themes_path.."main/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width = dpi(100)
-theme.menu_border_color = "#2366BD"
+theme.menu_border_color = "#e8333f"
 theme.menu_border_width = dpi(1)
 -- theme.menu_fg_focus = ""
-theme.menu_bg_focus = "#2366BD"
+theme.menu_bg_focus = "#e8333f"
 -- theme.menu_fg_normal = ""
 -- theme.menu_bg_normal = ""
 -- theme.menu_submenu = " "
