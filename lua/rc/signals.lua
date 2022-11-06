@@ -83,12 +83,12 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 client.connect_signal("focus", function(c)
-	awful.titlebar.show(c)
+	-- awful.titlebar.show(c)
 	c.border_color = beautiful.border_focus
 end)
 
 client.connect_signal("unfocus", function(c)
-	awful.titlebar.hide(c)
+	-- awful.titlebar.hide(c)
 	c.border_color = beautiful.border_normal
 end)
 -- }}}
