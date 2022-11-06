@@ -53,7 +53,9 @@ local function hook_cmus() --{{{
 
 	if cmus_run then
 		local cmus_info = io.popen("cmus-remote -Q"):read("*all")
-		local cmus_state = string.gsub(string.match(cmus_info, "status %a*"), "status ", "")
+		local cmus_state = string.gsub(string.match(cmus_info, "status %a*") or "", "status ", "")
+        local cmus_string = ""
+
 		if cmus_state == "playing" or cmus_state == "paused" then
 			local cmus_artist = string.match(cmus_info, "tag artist %C*")
 			if cmus_artist == nil then
@@ -89,7 +91,7 @@ local function hook_cmus() --{{{
 				.. string.format("%02d", cmus_totaltime % 60)
 
 			-- cmus_title = string.format("%.5c", cmus_title)
-			local cmus_string = cmus_artist
+			cmus_string = cmus_artist
 				.. " - "
 				.. cmus_title
 				.. " ("
