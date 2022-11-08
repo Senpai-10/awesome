@@ -23,6 +23,11 @@ client.connect_signal("manage", function(c)
 		awful.placement.no_offscreen(c)
 	end
 
+    -- change clients shape
+    c.shape = function(cr,w,h)
+        gears.shape.rounded_rect(cr,w,h,5)
+    end
+
 	-- if c.floating then
 	-- awful.titlebar.toggle(c)
 	-- end
