@@ -1,0 +1,3 @@
+remove M.widget from widgets insted return the widget and create a init.lua to import widgets from
+
+add tooltips to widgets
