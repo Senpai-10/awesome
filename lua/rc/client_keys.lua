@@ -30,6 +30,10 @@ return gears.table.join(
 		c.ontop = not c.ontop
 	end, { description = "toggle keep on top", group = "client" }),
 
+    awful.key({ MODKEY, "Control" }, "t", function(c)
+		awful.titlebar.toggle(c)
+	end, { description = "toggle titlebar", group = "client" }),
+
 	awful.key({ MODKEY }, "n", function(c)
 		-- The client currently has the input focus, so it cannot be
 		-- minimized, since minimized clients can't have the focus.
