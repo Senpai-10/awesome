@@ -7,5 +7,5 @@ if [[ $(grep -F -c -i "redirect" /tmp/weather ) -gt 0 ]]; then
 elif [[ $(grep -F -c -i "Unknown location" /tmp/weather) -gt 0 ]]; then
 	echo "wttr.in is temporarily down"
 else
-	echo " $(cat /tmp/weather)"
+	echo "  $(cat /tmp/weather)"
 fi
