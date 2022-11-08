@@ -155,7 +155,7 @@ local globalkeys = gears.table.join(
 	end, { description = "screenshot with selection", group = "scrot" }),
 
 	awful.key({ MODKEY, "Shift" }, "p", function()
-		awful.spawn.with_shell("gpick -o -s | xclip -sel c")
+		awful.spawn.with_shell("picker")
 	end, { description = "color picker", group = "awesome" }),
 
 	awful.key({ MODKEY, "Control" }, "s", function()
