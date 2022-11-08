@@ -9,7 +9,7 @@ function M.setup(screen)
 	-- to get the same light colors
 	-- set HSV's last % to 91
 
-    local separator = screen.separator
+	local separator = screen.separator
 
 	-- Create the wibox
 	screen.bottom_wibox = awful.wibar({ position = "bottom", screen = screen, height = 28 })
@@ -19,10 +19,10 @@ function M.setup(screen)
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
-            widgets.cmus,
+			widgets.cmus,
 		},
 		-- Middle widgets
-        nil,
+		nil,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			widgets.network,
