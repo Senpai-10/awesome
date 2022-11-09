@@ -7,6 +7,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local truncate_string = require("lua.helpers.truncate_string").truncate_string
+local gears = require("gears")
 
 local M = {}
 
@@ -54,7 +55,7 @@ local function hook_cmus() --{{{
 	if cmus_run then
 		local cmus_info = io.popen("cmus-remote -Q"):read("*all")
 		local cmus_state = string.gsub(string.match(cmus_info, "status %a*") or "", "status ", "")
-        local cmus_string = ""
+		local cmus_string = ""
 
 		if cmus_state == "playing" or cmus_state == "paused" then
 			local cmus_artist = string.match(cmus_info, "tag artist %C*")
@@ -73,7 +74,7 @@ local function hook_cmus() --{{{
 
 			-- cut the string off it its more than 15 chars
 			cmus_artist = truncate_string(cmus_artist, 15)
-            cmus_title = truncate_string(cmus_title, 15)
+			cmus_title = truncate_string(cmus_title, 15)
 
 			local cmus_curtime = string.gsub(string.match(cmus_info, "position %d*"), "position ", "")
 			local cmus_curtime_formated = math.floor(cmus_curtime / 60)
@@ -125,7 +126,8 @@ M.widget = {
 	},
 	fg = beautiful.widget_fg,
 	-- bg = "#7476e8",
-    bg = beautiful.widget_bg,
+	bg = beautiful.widget_bg,
+    shape = gears.shape.rounded_rect,
 	widget = wibox.container.background,
 }
 

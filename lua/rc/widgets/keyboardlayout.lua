@@ -1,7 +1,7 @@
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
-local get_script = require("lua.helpers.get_script").get_script
+local gears = require("gears")
 
 -- Keyboard map indicator and switcher
 local mykeyboardlayout = awful.widget.keyboardlayout()
@@ -21,6 +21,7 @@ M.widget = {
 	},
 	fg = beautiful.widget_fg,
     bg = beautiful.widget_bg,
+    shape = gears.shape.rounded_rect,
 	widget = wibox.container.background,
 }
 
