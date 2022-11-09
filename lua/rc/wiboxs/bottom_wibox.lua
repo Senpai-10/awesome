@@ -12,7 +12,11 @@ function M.setup(screen)
 	local separator = screen.separator
 
 	-- Create the wibox
-	screen.bottom_wibox = awful.wibar({ position = "bottom", screen = screen, height = 28 })
+	screen.bottom_wibox = awful.wibar({
+		position = "bottom",
+		screen = screen,
+		height = 28,
+	})
 
 	-- Add widgets to the wibox
 	screen.bottom_wibox:setup({
