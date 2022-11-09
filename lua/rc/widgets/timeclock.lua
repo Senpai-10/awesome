@@ -1,7 +1,17 @@
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local gears = require("gears")
-local mytextclock = wibox.widget.textclock("%A %F %l:%M:%S %P ", 1)
+local awful = require("awful")
+
+-- local mytextclock = wibox.widget.textclock("%A %F %l:%M:%S %P ", 1)
+local mytextclock = wibox.widget.textclock("%a%l:%M:%S %P ", 1)
+
+awful.tooltip {
+    objects        = { mytextclock },
+    timer_function = function()
+        return os.date("Today is %A %B %d %Y\n--------\nThe time is %I:%M:%S %p")
+    end,
+}
 
 local M = {}
 
