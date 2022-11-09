@@ -4,7 +4,7 @@ local gears = require("gears")
 local awful = require("awful")
 
 -- local mytextclock = wibox.widget.textclock("%A %F %l:%M:%S %P ", 1)
-local mytextclock = wibox.widget.textclock("%a%l:%M:%S %P ", 1)
+local mytextclock = wibox.widget.textclock("%a %l:%M:%S %P ", 1)
 
 awful.tooltip {
     objects        = { mytextclock },
