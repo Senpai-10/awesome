@@ -7,6 +7,18 @@ local M = {}
 
 local watch_widget = wibox.widget.textbox("神  uptime")
 
+awful.tooltip({
+	objects = { watch_widget },
+	timer_function = function()
+		local handle = assert(io.popen("uptime -p"))
+		local result = handle:read("*a")
+
+		handle:close()
+
+		return result
+	end,
+})
+
 M.widget = {
 	{
 		{
@@ -23,18 +35,5 @@ M.widget = {
 	shape = gears.shape.rounded_rect,
 	widget = wibox.container.background,
 }
-
-local uptime_tooltip = awful.tooltip({})
-
-uptime_tooltip:add_to_object(watch_widget)
-
-watch_widget:connect_signal("mouse::enter", function()
-	local handle = assert(io.popen("uptime -p"))
-	local result = handle:read("*a")
-
-	uptime_tooltip.text = result
-
-	handle:close()
-end)
 
 return M
