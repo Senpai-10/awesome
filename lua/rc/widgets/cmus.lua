@@ -27,7 +27,7 @@ function M.cmus_cmd(action)
 	local cmus_run = getCmusPid()
 	if cmus_run then
 		cmus_info = io.popen("cmus-remote -Q"):read("*all")
-		cmus_state = string.gsub(string.match(cmus_info, "status %a*"), "status ", "")
+		cmus_state = string.gsub(string.match(cmus_info, "status %a*") or "", "status ", "")
 		if cmus_state ~= "stopped" then
 			if action == "next" then
 				io.popen("cmus-remote -n")
