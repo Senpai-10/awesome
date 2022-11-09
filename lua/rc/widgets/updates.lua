@@ -10,10 +10,7 @@ local watch_widget = awful.widget.watch("bash -c " .. get_script("updates.sh"), 
 watch_widget:connect_signal("button::press", function(_, _, _, button)
 	-- right mouse button
 	if button == 3 then
-		local handle = assert(io.popen("checkupdates"))
-		local result = handle:read("*a")
-
-		handle:close()
+		local result = io.popen("checkupdates"):read("*a")
 
 		naughty.notify({
 			title = "Pending updates",
