@@ -10,12 +10,10 @@ local watch_widget = wibox.widget.textbox("神  uptime")
 awful.tooltip({
 	objects = { watch_widget },
 	timer_function = function()
-		local handle = assert(io.popen("uptime -p"))
-		local result = handle:read("*a")
+		local uptime = assert(io.popen("uptime -p")):read("*a")
+		local uptime_since = assert(io.popen("uptime -s")):read("*a")
 
-		handle:close()
-
-		return result
+		return uptime .. "\n" .. "Since: " .. uptime_since
 	end,
 })
 
