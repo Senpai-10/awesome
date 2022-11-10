@@ -73,7 +73,6 @@ theme.taglist_bg_focus = "#17171A"
 theme.taglist_fg_occupied = "#C7CBCC"
 theme.taglist_fg_urgent = "#ED7572"
 theme.taglist_fg_empty = "#2f2f30"
-theme.taglist_fg_urgent = "#FE3D3D"
 theme.taglist_spacing = 0
 theme.taglist_font = font_name .. " 11"
 
