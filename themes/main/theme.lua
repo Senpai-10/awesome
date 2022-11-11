@@ -76,6 +76,11 @@ theme.taglist_fg_empty = "#2f2f30"
 theme.taglist_spacing = 0
 theme.taglist_font = font_name .. " 11"
 
+-- prompt_[fg|bg|fg_cursor|bg_cursor|font]
+
+theme.prompt_bg = theme.widget_bg
+theme.prompt_font = theme.font
+
 -- theme.tasklist_disable_task_name = true
 
 -- Variables set for theming notifications:
