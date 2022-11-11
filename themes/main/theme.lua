@@ -95,7 +95,6 @@ theme.menu_height = dpi(15)
 theme.menu_width = dpi(100)
 theme.menu_border_color = "#e8333f"
 theme.menu_border_width = dpi(1)
--- theme.menu_fg_focus = ""
 theme.menu_bg_focus = "#e8333f"
 -- theme.menu_fg_normal = ""
 -- theme.menu_bg_normal = ""
