@@ -10,5 +10,6 @@ M.cpu_usage = require("lua.rc.widgets.cpu-usage").widget
 M.cpu_temp = require("lua.rc.widgets.cpu-temp").widget
 M.ram_usage = require("lua.rc.widgets.ram-usage").widget
 M.timeclock = require("lua.rc.widgets.timeclock").widget
+M.fs = require("lua.rc.widgets.fs-widget")
 
 return M
