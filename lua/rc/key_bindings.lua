@@ -61,9 +61,11 @@ local globalkeys = gears.table.join(
 	awful.key({ MODKEY }, "j", function()
 		awful.client.focus.byidx(1)
 	end, { description = "focus next by index", group = "client" }),
+
 	awful.key({ MODKEY }, "k", function()
 		awful.client.focus.byidx(-1)
 	end, { description = "focus previous by index", group = "client" }),
+
 	awful.key({ MODKEY }, "w", function()
 		mymainmenu:show()
 	end, { description = "show main menu", group = "awesome" }),
@@ -84,16 +86,20 @@ local globalkeys = gears.table.join(
 	awful.key({ MODKEY, "Shift" }, "j", function()
 		awful.client.swap.byidx(1)
 	end, { description = "swap with next client by index", group = "client" }),
-	awful.key({ MODKEY, "Shift" }, "k", function()
+
+    awful.key({ MODKEY, "Shift" }, "k", function()
 		awful.client.swap.byidx(-1)
 	end, { description = "swap with previous client by index", group = "client" }),
-	awful.key({ MODKEY, "Control" }, "j", function()
+
+    awful.key({ MODKEY, "Control" }, "j", function()
 		awful.screen.focus_relative(1)
 	end, { description = "focus the next screen", group = "screen" }),
-	awful.key({ MODKEY, "Control" }, "k", function()
+
+    awful.key({ MODKEY, "Control" }, "k", function()
 		awful.screen.focus_relative(-1)
 	end, { description = "focus the previous screen", group = "screen" }),
-	awful.key({ MODKEY }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
+
+    awful.key({ MODKEY }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
 
 	--awful.key({ MODKEY }, "Tab",
 	--    function ()
@@ -119,28 +125,35 @@ local globalkeys = gears.table.join(
 	awful.key({ MODKEY }, "Return", function()
 		awful.spawn(TERMINAL)
 	end, { description = "open a terminal", group = "launcher" }),
+
 	awful.key({ MODKEY }, "e", function()
 		awful.spawn(FILES_MANAGER)
 	end, { description = "open file manager", group = "launcher" }),
+
 	awful.key({ MODKEY, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ MODKEY, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
 	awful.key({ MODKEY }, "l", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
-	awful.key({ MODKEY }, "h", function()
+
+    awful.key({ MODKEY }, "h", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease master width factor", group = "layout" }),
-	awful.key({ MODKEY, "Shift" }, "h", function()
+
+    awful.key({ MODKEY, "Shift" }, "h", function()
 		awful.tag.incnmaster(1, nil, true)
 	end, { description = "increase the number of master clients", group = "layout" }),
-	awful.key({ MODKEY, "Shift" }, "l", function()
+
+    awful.key({ MODKEY, "Shift" }, "l", function()
 		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "decrease the number of master clients", group = "layout" }),
-	awful.key({ MODKEY, "Control" }, "h", function()
+
+    awful.key({ MODKEY, "Control" }, "h", function()
 		awful.tag.incncol(1, nil, true)
 	end, { description = "increase the number of columns", group = "layout" }),
-	awful.key({ MODKEY, "Control" }, "l", function()
+
+    awful.key({ MODKEY, "Control" }, "l", function()
 		awful.tag.incncol(-1, nil, true)
 	end, { description = "decrease the number of columns", group = "layout" }),
 
@@ -162,7 +175,7 @@ local globalkeys = gears.table.join(
 		awful.spawn("flameshot full")
 	end, { description = "screenshot fullscreen", group = "scrot" }),
 
-	awful.key({ MODKEY, "Control", "Shift" }, "s", function()
+    awful.key({ MODKEY, "Control", "Shift" }, "s", function()
 		awful.spawn("flameshot full -c")
 	end, { description = "screenshot fullscreen and save to clipboard", group = "scrot" }),
 
@@ -195,7 +208,8 @@ local globalkeys = gears.table.join(
 			history_path = awful.util.get_cache_dir() .. "/history_eval",
 		})
 	end, { description = "lua.rc.execute prompt", group = "awesome" }),
-	-- Menubar
+
+    -- Menubar
 	awful.key({ MODKEY }, "r", function()
 		awful.spawn("dmenu_run")
 	end, { description = "run dmenu", group = "launcher" }),
