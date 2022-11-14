@@ -3,6 +3,26 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local gears = require("gears")
 
+local function get_tags_menu_items(c)
+	local output = {}
+
+	for index, tag in pairs(root.tags()) do -- luacheck: globals root
+		table.insert(output, {
+			-- [idx] tag_name
+			"["
+				.. index
+				.. "]"
+				.. " "
+				.. tag.name,
+			function()
+				c:move_to_tag(tag) -- luacheck: globals root
+			end,
+		})
+	end
+
+	return output
+end
+
 -- {{{ Signals
 
 -- tag.connect_signal("property::selected", function (tag)
@@ -40,6 +60,13 @@ client.connect_signal("request::titlebars", function(c)
 		awful.button({}, 1, function()
 			c:emit_signal("request::activate", "titlebar", { raise = true })
 			awful.mouse.client.move(c)
+		end),
+		awful.button({}, 2, function()
+			client.focus = c
+			c:raise()
+
+			local tags_menu = awful.menu.new(get_tags_menu_items(c))
+			tags_menu:toggle()
 		end),
 		awful.button({}, 3, function()
 			c:emit_signal("request::activate", "titlebar", { raise = true })
