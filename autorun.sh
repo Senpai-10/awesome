@@ -8,9 +8,13 @@ run() {
 }
 
 run_or_restart() {
-    killall "$1"
-
-    "${@:2}"&
+    if pgrep "$1" > /dev/null
+    then
+        killall "$1"
+        "${@:2}"&
+    else
+        "${@:2}"&
+    fi
 }
 
 run picom           picom
@@ -20,4 +24,5 @@ run flameshot       flameshot
 run gromit-mpx      gromit-mpx
 run Discord         discord --start-minimized
 run qpwgraph        qpwgraph ~/patchbay.qpwgraph -am
-run_or_restart discover-overlay discover-overlay
+run_or_restart discover-overla discover-overlay
+run_or_restart cmus-rpc cmus-rpc
