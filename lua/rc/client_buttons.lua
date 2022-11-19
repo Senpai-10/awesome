@@ -1,15 +1,16 @@
 local gears = require("gears")
 local awful = require("awful")
+local default = require("lua.rc.default")
 
 return gears.table.join(
 	awful.button({}, 1, function(c)
 		c:emit_signal("request::activate", "mouse_click", { raise = true })
 	end),
-	awful.button({ MODKEY }, 1, function(c)
+	awful.button({ default.modkey }, 1, function(c)
 		c:emit_signal("request::activate", "mouse_click", { raise = true })
 		awful.mouse.client.move(c)
 	end),
-	awful.button({ MODKEY }, 3, function(c)
+	awful.button({ default.modkey }, 3, function(c)
 		c:emit_signal("request::activate", "mouse_click", { raise = true })
 		awful.mouse.client.resize(c)
 	end)

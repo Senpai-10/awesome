@@ -11,6 +11,7 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local default = require("lua.rc.default")
 local treetile = require("treetile")
 local cyclefocus = require("cyclefocus")
 treetile.focusnew = true
@@ -52,24 +53,6 @@ end
 
 beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/main/theme.lua")
 
--- This is used later as the default terminal and editor to run.
-TERMINAL = os.getenv("TERMINAL") or "alacritty"
-EDITOR = os.getenv("EDITOR") or "vim"
-FILES_MANAGER = os.getenv("FILEMANAGER")
-MUSIC_PLAYER = "cmus"
-
-EDITOR_CMD = TERMINAL .. " -e " .. EDITOR
-
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-MODKEY = "Mod4"
-
-TAG_ICON = beautiful.tag_icon
--- TAG_ICON_SELECTED = beautiful.tag_icon_selected
-
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
 	awful.layout.suit.tile,
@@ -95,7 +78,7 @@ awful.layout.layouts = {
 local mymainmenu = require("lua.rc.menus")
 
 -- Menubar configuration
-menubar.utils.terminal = TERMINAL -- Set the terminal for applications that require it
+menubar.utils.terminal = default.terminal -- Set the terminal for applications that require it
 -- }}}
 
 -- Create a wibox for each screen and add it

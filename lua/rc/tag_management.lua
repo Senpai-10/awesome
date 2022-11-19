@@ -1,4 +1,5 @@
 local awful = require("awful")
+local default = require("lua.rc.default")
 
 local M = {}
 
@@ -14,7 +15,7 @@ end
 -- Create a new tag at the end of the list
 function M.add_tag()
 	awful.tag
-		.add(TAG_ICON, {
+		.add(default.tag_icon, {
 			screen = awful.screen.focused(),
 			layout = awful.layout.layouts[1],
 		})
@@ -38,7 +39,7 @@ function M.rename_tag()
 				-- t.name = new_name
 
 				if new_name == "icon" then
-					t.name = TAG_ICON
+					t.name = default.tag_icon
 				else
 					t.name = " " .. new_name .. " "
 				end

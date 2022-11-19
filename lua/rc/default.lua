@@ -1,5 +1,3 @@
--- TODO: use this mod insted of GLOBAL VARS!
-
 local beautiful = require("beautiful")
 
 local M = {}
@@ -9,7 +7,7 @@ M.editor = os.getenv("EDITOR") or "vim"
 M.files_manager = os.getenv("FILEMANAGER")
 M.music_player = "cmus"
 
-M.editor_cmd = M.terminal .. " -e " .. EDITOR
+M.editor_cmd = M.terminal .. " -e " .. M.editor
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.

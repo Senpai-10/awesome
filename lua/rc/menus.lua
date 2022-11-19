@@ -1,4 +1,5 @@
 local awful = require("awful")
+local default = require("lua.rc.default")
 
 local apps_menu = require("lua.rc.submenus.apps_menu")
 local power_menu = require("lua.rc.submenus.power_menu")
@@ -9,17 +10,17 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- require("awful.hotkeys_popup.keys")
 
 local open_files_menu = {
-    { "Open todos", EDITOR_CMD .. " /home/senpai/.todo" },
+    { "Open todos", default.editor_cmd .. " /home/senpai/.todo" },
     {
         "Open awesome config",
         function ()
-            awful.spawn.with_shell(EDITOR_CMD .. " ~/.config/awesome/")
+            awful.spawn.with_shell(default.editor_cmd .. " ~/.config/awesome/")
         end
     },
     {
         "Open neovim config",
         function ()
-            awful.spawn.with_shell(EDITOR_CMD .. " ~/.config/nvim/")
+            awful.spawn.with_shell(default.editor_cmd .. " ~/.config/nvim/")
         end
     },
 }
@@ -37,7 +38,7 @@ return awful.menu({
 		{
 			"Run backup script",
 			function()
-				awful.spawn.with_shell(TERMINAL .. " -e " .. "~/.dotfiles/backup.py")
+				awful.spawn.with_shell(default.terminal .. " -e " .. "~/.dotfiles/backup.py")
 			end,
 		},
 		{ "Restart awesome", awesome.restart },

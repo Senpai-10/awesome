@@ -12,7 +12,7 @@ return {
     {
         "gimp",
         function ()
-            awful.spawn("")
+            awful.spawn("gimp")
         end
     },
     {

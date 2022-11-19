@@ -1,4 +1,5 @@
 local awful = require("awful")
+local default = require("lua.rc.default")
 
 return {
     {
@@ -22,7 +23,7 @@ return {
 	{
 		"nvim",
 		function()
-			awful.spawn(TERMINAL .. " -e nvim")
+			awful.spawn(default.terminal .. " -e nvim")
 		end,
 	},
     {
