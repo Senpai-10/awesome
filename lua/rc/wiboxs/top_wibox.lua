@@ -8,12 +8,18 @@ function M.setup(screen)
 
 	screen.top_wibox:setup({
 		layout = wibox.layout.align.horizontal,
-		screen.mypromptbox,
 		{
 			layout = wibox.layout.align.horizontal,
 			screen.mytaglist,
 		},
-		screen.mytasklist,
+		{
+			layout = wibox.layout.align.horizontal,
+			screen.mypromptbox,
+		},
+		{
+			layout = wibox.layout.align.horizontal,
+			screen.mytasklist,
+		},
 	})
 end
 
