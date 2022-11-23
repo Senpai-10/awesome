@@ -28,7 +28,7 @@ function M.rename_tag()
     local current_tag_name = trim(awful.screen.focused().selected_tag.name)
 
 	awful.prompt.run({
-		prompt = "<b>New tag name:</b> ",
+		prompt = " <b>New tag name:</b> ",
         text = current_tag_name,
 		textbox = awful.screen.focused().mypromptbox.widget,
 		exe_callback = function(new_name)
