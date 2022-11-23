@@ -1,5 +1,6 @@
 local awful = require("awful")
 local default = require("lua.rc.default")
+local trim    = require("lua.helpers.trim")
 
 local M = {}
 
@@ -24,8 +25,11 @@ end
 
 -- Rename the current tag
 function M.rename_tag()
+    local current_tag_name = trim(awful.screen.focused().selected_tag.name)
+
 	awful.prompt.run({
 		prompt = "New tag name: ",
+        text = current_tag_name,
 		textbox = awful.screen.focused().mypromptbox.widget,
 		exe_callback = function(new_name)
 			if not new_name or #new_name == 0 then

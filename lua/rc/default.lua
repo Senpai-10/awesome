@@ -16,7 +16,7 @@ M.editor_cmd = M.terminal .. " -e " .. M.editor
 -- However, you can use another modifier like Mod1, but it may interact with others.
 M.modkey = "Mod4"
 
-M.tag_icon = beautiful.tag_icon
-M.tag_icon_selected = beautiful.tag_icon_selected
+M.tag_icon = beautiful.tag_icon or "[tag]"
+M.tag_icon_selected = beautiful.tag_icon_selected or "[selected tag]"
 
 return M
