@@ -24,6 +24,6 @@ run flameshot       flameshot
 run gromit-mpx      gromit-mpx
 run Discord         discord --start-minimized
 run qpwgraph        qpwgraph ~/patchbay.qpwgraph -am
-run nm-applet       nm-applet
+run nm-applet       nm-applet --indicator
 run_or_restart discover-overla discover-overlay
 run_or_restart cmus-rpc cmus-rpc
