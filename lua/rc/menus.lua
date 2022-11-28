@@ -28,6 +28,12 @@ local open_files_menu = {
 return awful.menu({
 	items = {
 		{ "Applications", apps_menu },
+        {
+            "Terminal",
+            function ()
+                awful.spawn(default.terminal)
+            end
+        },
 		{
 			"Hotkeys",
 			function()
