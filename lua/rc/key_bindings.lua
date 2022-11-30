@@ -243,6 +243,14 @@ local globalkeys = gears.table.join(
 		awful.spawn("playerctl-wrapper previous")
 	end, { description = "play previous audio", group = "function keys" }),
 
+    awful.key({ "Shift" }, "XF86AudioNext", function()
+		awful.spawn("playerctl-wrapper position 10+")
+	end, { description = "seek audio 10+", group = "function keys" }),
+
+	awful.key({ "Shift" }, "XF86AudioPrev", function()
+		awful.spawn("playerctl-wrapper position 10-")
+	end, { description = "seek audio 10-", group = "function keys" }),
+
 	awful.key({}, "XF86Tools", function()
 		awful.spawn(default.terminal .. " -e " .. default.music_player)
 	end, { description = "launch music player", group = "function keys" }),
