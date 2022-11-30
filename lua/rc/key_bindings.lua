@@ -216,11 +216,11 @@ local globalkeys = gears.table.join(
 	end, { description = "run dmenu", group = "launcher" }),
 
 	awful.key({}, "XF86AudioRaiseVolume", function()
-		awful.spawn("playerctl-wrapper volume 0.02+")
+		awful.spawn("playerctl-wrapper volume 0.1+")
 	end, { description = "raise volume", group = "function keys" }),
 
 	awful.key({}, "XF86AudioLowerVolume", function()
-		awful.spawn("playerctl-wrapper volume 0.02-")
+		awful.spawn("playerctl-wrapper volume 0.1-")
 	end, { description = "lower volume", group = "function keys" }),
 
 	awful.key({}, "XF86AudioMute", function()
