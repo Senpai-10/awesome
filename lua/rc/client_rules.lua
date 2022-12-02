@@ -66,6 +66,14 @@ return {
 		properties = { floating = true },
 	},
 
+	-- Center any floating window on the screen
+	{
+		rule_any = { floating = true },
+		properties = {
+			placement = awful.placement.centered + awful.placement.no_overlap + awful.placement.no_offscreen,
+		},
+	},
+
 	-- Add titlebars to normal clients and dialogs
 	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = true } },
 
