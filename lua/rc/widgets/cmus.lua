@@ -1,8 +1,3 @@
--- CMUS controler, taken from Robin Hahling
--- http://blog.rolinh.ch/linux/un-widget-controleur-pour-le-lecteur-audio-cmus-pour-awesome-wm/
-
---module("lib/cmus")
-
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
@@ -85,6 +80,16 @@ local function hook_cmus() --{{{
 				.. ":"
 				.. string.format("%02d", cmus_totaltime % 60)
 
+            local vol_left = string.gsub(string.match(cmus_info, "set vol_left %d*"), "set vol_left ", "")
+            local vol_right = string.gsub(string.match(cmus_info, "set vol_right %d*"), "set vol_right ", "")
+            local volume = ""
+
+            if vol_left == vol_right then
+                volume = "vol: " .. vol_left
+            else
+                volume = "vol_l: " .. vol_left .. " vol_r: " .. vol_right
+            end
+
 			cmus_string = cmus_artist
 				.. " - "
 				.. cmus_title
@@ -93,6 +98,8 @@ local function hook_cmus() --{{{
 				.. "/"
 				.. cmus_totaltime_formated
 				.. ")"
+                .. " "
+                .. volume
 			if cmus_state == "paused" then
 				cmus_string = "|| " .. cmus_string .. ""
 			else
