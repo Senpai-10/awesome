@@ -9,7 +9,7 @@ local M = {}
 M.widget = {
 	{
 		{
-			widget = awful.widget.watch("bash -c " .. get_script("ram-usage.sh"), 3),
+			widget = awful.widget.watch("bash -c " .. get_script("ram-usage.sh"), 1),
 		},
 		left = 10,
 		right = 10,
