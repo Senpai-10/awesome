@@ -5,5 +5,4 @@ ram_total="$(free -h | gawk  '/Mem:/{print $2}')"
 ram_used="$(free -h | gawk  '/Mem:/{print $3}')"
 ram_available="$(free -h | gawk  '/Mem:/{print $7}')"
 
-# in %
 echo " $ram_used / $ram_total | $ram_available"
