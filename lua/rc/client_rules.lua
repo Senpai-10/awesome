@@ -90,4 +90,5 @@ return {
 	--     },
 
 	{ rule = { class = "mpv" }, properties = { floating = true, fullscreen = true } },
+    { rule = { name = "Anime org" }, properties = { floating = true } },
 }
