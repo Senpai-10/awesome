@@ -1,7 +1,7 @@
 local awful = require("awful")
 
 return {
-    {
+	{
 		"figma",
 		function()
 			awful.spawn(
@@ -9,22 +9,22 @@ return {
 			)
 		end,
 	},
-    {
-        "gimp",
-        function ()
-            awful.spawn("gimp")
-        end
-    },
-    {
-        "gromit mpx",
-        function ()
-            awful.spawn("gromit-mpx")
-        end
-    },
-    {
-        "mypaint",
-        function ()
-            awful.spawn("mypaint")
-        end
-    },
+	{
+		"gimp",
+		function()
+			awful.spawn("gimp")
+		end,
+	},
+	{
+		"gromit mpx",
+		function()
+			awful.spawn("gromit-mpx")
+		end,
+	},
+	{
+		"mypaint",
+		function()
+			awful.spawn("mypaint")
+		end,
+	},
 }

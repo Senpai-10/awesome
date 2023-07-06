@@ -16,7 +16,7 @@
         "screen",
         "mouse",
         "root",
-        "client",
+        "client"
     ],
     "workspace.library": [
         "/usr/share/awesome/lib"

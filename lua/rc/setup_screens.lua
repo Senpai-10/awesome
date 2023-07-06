@@ -60,4 +60,3 @@ awful.screen.connect_for_each_screen(function(s)
 	require("lua.rc.wiboxs.top_wibox").setup(s)
 	require("lua.rc.wiboxs.bottom_wibox").setup(s)
 end)
-

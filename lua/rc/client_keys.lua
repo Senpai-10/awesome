@@ -9,11 +9,11 @@ return gears.table.join(
 		c:raise()
 	end, { description = "toggle fullscreen", group = "client" }),
 
-    awful.key({ modkey, "Shift" }, "c", function(c)
+	awful.key({ modkey, "Shift" }, "c", function(c)
 		c:kill()
 	end, { description = "close", group = "client" }),
 
-    awful.key(
+	awful.key(
 		{ modkey, "Control" },
 		"space",
 		awful.client.floating.toggle,
@@ -32,7 +32,7 @@ return gears.table.join(
 		c.ontop = not c.ontop
 	end, { description = "toggle keep on top", group = "client" }),
 
-    awful.key({ modkey, "Control" }, "t", function(c)
+	awful.key({ modkey, "Control" }, "t", function(c)
 		awful.titlebar.toggle(c)
 	end, { description = "toggle titlebar", group = "client" }),
 
@@ -42,17 +42,17 @@ return gears.table.join(
 		c.minimized = true
 	end, { description = "minimize", group = "client" }),
 
-    awful.key({ modkey }, "m", function(c)
+	awful.key({ modkey }, "m", function(c)
 		c.maximized = not c.maximized
 		c:raise()
 	end, { description = "(un)maximize", group = "client" }),
 
-    awful.key({ modkey, "Control" }, "m", function(c)
+	awful.key({ modkey, "Control" }, "m", function(c)
 		c.maximized_vertical = not c.maximized_vertical
 		c:raise()
 	end, { description = "(un)maximize vertically", group = "client" }),
 
-    awful.key({ modkey, "Shift" }, "m", function(c)
+	awful.key({ modkey, "Shift" }, "m", function(c)
 		c.maximized_horizontal = not c.maximized_horizontal
 		c:raise()
 	end, { description = "(un)maximize horizontally", group = "client" })

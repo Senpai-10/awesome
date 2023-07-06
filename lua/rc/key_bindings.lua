@@ -61,7 +61,7 @@ local globalkeys = gears.table.join(
 
 	awful.key({ modkey }, ".", function()
 		awful.spawn("emoji-picker")
-    end, { description = "emoji selector", group = "awesome" }),
+	end, { description = "emoji selector", group = "awesome" }),
 
 	awful.key({ modkey }, "j", function()
 		awful.client.focus.byidx(1)
@@ -77,13 +77,13 @@ local globalkeys = gears.table.join(
 
 	awful.key({ modkey }, "b", function()
 		for s in screen do
-            if s.top_wibox then
-                s.top_wibox.visible = not s.top_wibox.visible
-            end
+			if s.top_wibox then
+				s.top_wibox.visible = not s.top_wibox.visible
+			end
 
-            if s.bottom_wibox then
-                s.bottom_wibox.visible = not s.bottom_wibox.visible
-            end
+			if s.bottom_wibox then
+				s.bottom_wibox.visible = not s.bottom_wibox.visible
+			end
 		end
 	end, { description = "hide all bars", group = "awesome" }),
 
@@ -92,19 +92,19 @@ local globalkeys = gears.table.join(
 		awful.client.swap.byidx(1)
 	end, { description = "swap with next client by index", group = "client" }),
 
-    awful.key({ modkey, "Shift" }, "k", function()
+	awful.key({ modkey, "Shift" }, "k", function()
 		awful.client.swap.byidx(-1)
 	end, { description = "swap with previous client by index", group = "client" }),
 
-    awful.key({ modkey, "Control" }, "j", function()
+	awful.key({ modkey, "Control" }, "j", function()
 		awful.screen.focus_relative(1)
 	end, { description = "focus the next screen", group = "screen" }),
 
-    awful.key({ modkey, "Control" }, "k", function()
+	awful.key({ modkey, "Control" }, "k", function()
 		awful.screen.focus_relative(-1)
 	end, { description = "focus the previous screen", group = "screen" }),
 
-    awful.key({ modkey }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
+	awful.key({ modkey }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
 
 	--awful.key({ modkey }, "Tab",
 	--    function ()
@@ -142,23 +142,23 @@ local globalkeys = gears.table.join(
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
 
-    awful.key({ modkey }, "h", function()
+	awful.key({ modkey }, "h", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease master width factor", group = "layout" }),
 
-    awful.key({ modkey, "Shift" }, "h", function()
+	awful.key({ modkey, "Shift" }, "h", function()
 		awful.tag.incnmaster(1, nil, true)
 	end, { description = "increase the number of master clients", group = "layout" }),
 
-    awful.key({ modkey, "Shift" }, "l", function()
+	awful.key({ modkey, "Shift" }, "l", function()
 		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "decrease the number of master clients", group = "layout" }),
 
-    awful.key({ modkey, "Control" }, "h", function()
+	awful.key({ modkey, "Control" }, "h", function()
 		awful.tag.incncol(1, nil, true)
 	end, { description = "increase the number of columns", group = "layout" }),
 
-    awful.key({ modkey, "Control" }, "l", function()
+	awful.key({ modkey, "Control" }, "l", function()
 		awful.tag.incncol(-1, nil, true)
 	end, { description = "decrease the number of columns", group = "layout" }),
 
@@ -180,7 +180,7 @@ local globalkeys = gears.table.join(
 		awful.spawn("flameshot full")
 	end, { description = "screenshot fullscreen", group = "scrot" }),
 
-    awful.key({ modkey, "Control", "Shift" }, "s", function()
+	awful.key({ modkey, "Control", "Shift" }, "s", function()
 		awful.spawn("flameshot full -c")
 	end, { description = "screenshot fullscreen and save to clipboard", group = "scrot" }),
 
@@ -214,7 +214,7 @@ local globalkeys = gears.table.join(
 		})
 	end, { description = "lua.rc.execute prompt", group = "awesome" }),
 
-    -- Menubar
+	-- Menubar
 	awful.key({ modkey }, "r", function()
 		awful.spawn("dmenu_run")
 	end, { description = "run dmenu", group = "launcher" }),
@@ -247,7 +247,7 @@ local globalkeys = gears.table.join(
 		awful.spawn("playerctl-wrapper previous")
 	end, { description = "play previous audio", group = "function keys" }),
 
-    awful.key({ "Shift" }, "XF86AudioNext", function()
+	awful.key({ "Shift" }, "XF86AudioNext", function()
 		awful.spawn("playerctl-wrapper position 10+")
 	end, { description = "seek audio 10+", group = "function keys" }),
 

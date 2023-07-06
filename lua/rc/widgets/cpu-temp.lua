@@ -18,8 +18,8 @@ M.widget = {
 		widget = wibox.container.margin,
 	},
 	fg = beautiful.widget_fg,
-    bg = beautiful.widget_bg,
-    shape = gears.shape.rounded_rect,
+	bg = beautiful.widget_bg,
+	shape = gears.shape.rounded_rect,
 	widget = wibox.container.background,
 }
 

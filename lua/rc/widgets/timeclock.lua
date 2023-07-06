@@ -6,12 +6,12 @@ local awful = require("awful")
 -- local mytextclock = wibox.widget.textclock("%A %F %l:%M:%S %P ", 1)
 local mytextclock = wibox.widget.textclock("%a %l:%M:%S %P ", 1)
 
-awful.tooltip {
-    objects        = { mytextclock },
-    timer_function = function()
-        return os.date("Today is %A %B %d %Y\n--------\nThe time is %I:%M:%S %p")
-    end,
-}
+awful.tooltip({
+	objects = { mytextclock },
+	timer_function = function()
+		return os.date("Today is %A %B %d %Y\n--------\nThe time is %I:%M:%S %p")
+	end,
+})
 
 local M = {}
 
@@ -27,8 +27,8 @@ M.widget = {
 		widget = wibox.container.margin,
 	},
 	fg = beautiful.widget_fg,
-    bg = beautiful.widget_bg,
-    shape = gears.shape.rounded_rect,
+	bg = beautiful.widget_bg,
+	shape = gears.shape.rounded_rect,
 	widget = wibox.container.background,
 }
 

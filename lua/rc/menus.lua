@@ -10,30 +10,30 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- require("awful.hotkeys_popup.keys")
 
 local open_files_menu = {
-    { "Open todos", default.editor_cmd .. " /home/senpai/.todo" },
-    {
-        "Open awesome config",
-        function ()
-            awful.spawn.with_shell(default.editor_cmd .. " ~/.config/awesome/")
-        end
-    },
-    {
-        "Open neovim config",
-        function ()
-            awful.spawn.with_shell(default.editor_cmd .. " ~/.config/nvim/")
-        end
-    },
+	{ "Open todos", default.editor_cmd .. " /home/senpai/.todo" },
+	{
+		"Open awesome config",
+		function()
+			awful.spawn.with_shell(default.editor_cmd .. " ~/.config/awesome/")
+		end,
+	},
+	{
+		"Open neovim config",
+		function()
+			awful.spawn.with_shell(default.editor_cmd .. " ~/.config/nvim/")
+		end,
+	},
 }
 
 return awful.menu({
 	items = {
 		{ "Applications", apps_menu },
-        {
-            "Terminal",
-            function ()
-                awful.spawn(default.terminal)
-            end
-        },
+		{
+			"Terminal",
+			function()
+				awful.spawn(default.terminal)
+			end,
+		},
 		{
 			"Hotkeys",
 			function()

@@ -37,8 +37,8 @@ function M.setup(screen)
 		{ -- Right widgets
 			{
 				layout = wibox.layout.fixed.horizontal,
-                widgets.fs(),
-                separator,
+				widgets.fs(),
+				separator,
 				widgets.network,
 				separator,
 				widgets.updates,

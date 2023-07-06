@@ -11,7 +11,7 @@ M.truncate_string = function(string, number)
 		string = string .. "..."
 	end
 
-    return string
+	return string
 end
 
 return M

@@ -80,15 +80,15 @@ local function hook_cmus() --{{{
 				.. ":"
 				.. string.format("%02d", cmus_totaltime % 60)
 
-            local vol_left = string.gsub(string.match(cmus_info, "set vol_left %d*"), "set vol_left ", "")
-            local vol_right = string.gsub(string.match(cmus_info, "set vol_right %d*"), "set vol_right ", "")
-            local volume = ""
+			local vol_left = string.gsub(string.match(cmus_info, "set vol_left %d*"), "set vol_left ", "")
+			local vol_right = string.gsub(string.match(cmus_info, "set vol_right %d*"), "set vol_right ", "")
+			local volume = ""
 
-            if vol_left == vol_right then
-                volume = "vol: " .. vol_left
-            else
-                volume = "vol_l: " .. vol_left .. " vol_r: " .. vol_right
-            end
+			if vol_left == vol_right then
+				volume = "vol: " .. vol_left
+			else
+				volume = "vol_l: " .. vol_left .. " vol_r: " .. vol_right
+			end
 
 			cmus_string = cmus_artist
 				.. " - "
@@ -98,8 +98,8 @@ local function hook_cmus() --{{{
 				.. "/"
 				.. cmus_totaltime_formated
 				.. ")"
-                .. " "
-                .. volume
+				.. " "
+				.. volume
 			if cmus_state == "paused" then
 				cmus_string = "|| " .. cmus_string .. ""
 			else
@@ -134,7 +134,7 @@ M.widget = {
 	fg = beautiful.widget_fg,
 	-- bg = "#7476e8",
 	bg = beautiful.widget_bg,
-    shape = gears.shape.rounded_rect,
+	shape = gears.shape.rounded_rect,
 	widget = wibox.container.background,
 }
 

@@ -7,12 +7,12 @@ return {
 			awful.spawn("system-monitoring-center")
 		end,
 	},
-    {
-        "lxtask",
-        function ()
-            awful.spawn("lxtask")
-        end
-    },
+	{
+		"lxtask",
+		function()
+			awful.spawn("lxtask")
+		end,
+	},
 	{
 		"virt manager",
 		function()
