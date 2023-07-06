@@ -8,25 +8,25 @@ self = false
 -- files["init.lua"].allow_defined_top = true
 
 -- This file itself
-files[".luacheckrc"].ignore = {"111", "112", "131"}
+files[".luacheckrc"].ignore = { "111", "112", "131" }
 
 -- Global objects defined by the C code
 read_globals = {
-    "awesome",
-    "button",
-    "client",
-    "dbus",
-    "drawable",
-    "drawin",
-    "key",
-    "keygrabber",
-    "mousegrabber",
-    "root",
-    "selection",
-    "tag",
-    "window",
-    -- Global settings.
-    "modkey",
+	"awesome",
+	"button",
+	"client",
+	"dbus",
+	"drawable",
+	"drawin",
+	"key",
+	"keygrabber",
+	"mousegrabber",
+	"root",
+	"selection",
+	"tag",
+	"window",
+	-- Global settings.
+	"modkey",
 }
 
 -- screen may not be read-only, because newer luacheck versions complain about
@@ -36,9 +36,9 @@ read_globals = {
 --   tags[7].index = 4
 -- client may not be read-only due to client.focus.
 globals = {
-    "screen",
-    "mouse",
-    "client"
+	"screen",
+	"mouse",
+	"client",
 }
 
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
