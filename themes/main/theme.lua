@@ -8,11 +8,11 @@ local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_xdg_config_home() .. "awesome/themes/"
-local font_name = "Iosevka Storm"
 
 local theme = {}
 
-theme.font = font_name .. " 11"
+theme.font_name = "Iosevka Storm"
+theme.font = theme.font_name .. " 11"
 
 theme.bg_normal = "#0F0F12"
 theme.bg_focus = "#1E1E21"
@@ -74,7 +74,7 @@ theme.taglist_fg_occupied = "#C7CBCC"
 theme.taglist_fg_urgent = "#ED7572"
 theme.taglist_fg_empty = "#2f2f30"
 theme.taglist_spacing = 0
-theme.taglist_font = font_name .. " 11"
+theme.taglist_font = theme.font_name .. " 11"
 
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 
