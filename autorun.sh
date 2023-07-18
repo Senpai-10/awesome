@@ -28,4 +28,3 @@ run nm-applet       nm-applet --indicator
 # run steam steam -silent
 run_or_restart discover-overla discover-overlay
 cmus-rpc -k
-run firefox firefox
