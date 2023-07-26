@@ -14,7 +14,6 @@ local menubar = require("menubar")
 local default = require("lua.rc.default")
 local treetile = require("treetile")
 local cyclefocus = require("cyclefocus")
-Effects = require("lua.rc.effects")
 treetile.focusnew = true
 cyclefocus.display_notifications = false
 

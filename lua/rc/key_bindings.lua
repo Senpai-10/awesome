@@ -7,7 +7,6 @@ local mymainmenu = require("lua.rc.menus")
 local default = require("lua.rc.default")
 local modkey = default.modkey
 local tag_management = require("lua.rc.tag_management")
-local tagswitch = Effects.request_effect("tagswitch")
 
 local globalkeys = gears.table.join(
 	awful.key({ modkey, "Control", "Shift" }, 0, function()
@@ -58,17 +57,9 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 	awful.key({ modkey }, "[", function()
 		awful.tag.viewprev()
-		if tagswitch then
-			local t = awful.screen.focused().selected_tag
-			tagswitch.animate(tostring(t.index))
-		end
 	end, { description = "view previous", group = "tag" }),
 	awful.key({ modkey }, "]", function()
 		awful.tag.viewnext()
-		if tagswitch then
-			local t = awful.screen.focused().selected_tag
-			tagswitch.animate(tostring(t.index))
-		end
 	end, { description = "view next", group = "tag" }),
 	awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
 
