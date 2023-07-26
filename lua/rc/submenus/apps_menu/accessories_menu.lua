@@ -14,45 +14,15 @@ return {
 		end,
 	},
 	{
-		"bitwarden",
-		function()
-			awful.spawn("bitwarden-desktop")
-		end,
-	},
-	{
-		"gnome disks",
-		function()
-			awful.spawn("gnome-disks")
-		end,
-	},
-	{
 		"nemo",
 		function()
 			awful.spawn("nemo")
 		end,
 	},
 	{
-		"spacefm",
-		function()
-			awful.spawn("spacefm")
-		end,
-	},
-	{
-		"pcmanfm",
-		function()
-			awful.spawn("pcmanfm")
-		end,
-	},
-	{
 		"nitrogen",
 		function()
 			awful.spawn("nitrogen")
-		end,
-	},
-	{
-		"Jgmenu",
-		function()
-			awful.spawn("jgmenu")
 		end,
 	},
 	{

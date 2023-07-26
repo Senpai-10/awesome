@@ -21,10 +21,4 @@ return {
 			awful.spawn("gromit-mpx")
 		end,
 	},
-	{
-		"mypaint",
-		function()
-			awful.spawn("mypaint")
-		end,
-	},
 }
