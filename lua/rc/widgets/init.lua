@@ -2,7 +2,6 @@ local M = {}
 
 M.cmus = require("lua.rc.widgets.cmus").widget
 M.network = require("lua.rc.widgets.network").widget
-M.updates = require("lua.rc.widgets.updates").widget
 M.keyboardlayout = require("lua.rc.widgets.keyboardlayout").widget
 M.weather = require("lua.rc.widgets.weather").widget
 M.uptime = require("lua.rc.widgets.uptime").widget

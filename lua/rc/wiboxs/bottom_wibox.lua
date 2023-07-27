@@ -40,8 +40,6 @@ function M.setup(screen)
 				separator,
 				widgets.network,
 				separator,
-				widgets.updates,
-				separator,
 				widgets.keyboardlayout,
 				separator,
 				widgets.weather,
