@@ -14,13 +14,13 @@ local theme = {}
 theme.font_name = "Iosevka Storm"
 theme.font = theme.font_name .. " 11"
 
-theme.bg_normal = "#0F0F12"
+theme.bg_normal = "#282828"
 theme.bg_focus = "#1E1E21"
 --theme.bg_urgent     = "#ff0000"
 theme.bg_minimize = "#444444"
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = "#aaaaaa"
+theme.fg_normal = "#D4BE98"
 theme.fg_focus = "#ffffff"
 theme.fg_urgent = "#ffffff"
 theme.fg_minimize = "#ffffff"
@@ -28,11 +28,11 @@ theme.fg_minimize = "#ffffff"
 theme.useless_gap = dpi(5)
 theme.border_width = dpi(0)
 theme.border_normal = "#535d6c"
-theme.border_focus = "#e8333f"
+theme.border_focus = "#EA6962"
 theme.border_marked = "#FFFFFF"
 
-theme.widget_bg = "#17171A"
-theme.widget_fg = "#C7CBCC"
+theme.widget_bg = "#1B1B1B"
+theme.widget_fg = "#DDC7A1"
 
 -- theme.widget_separator = " ⏽ "
 -- theme.widget_separator = "  "
@@ -67,12 +67,12 @@ theme.tag_icon = " " .. " " .. " "
 --     taglist_square_size, theme.fg_normal
 -- )
 
-theme.taglist_fg_focus = "#C7CBCC"
-theme.taglist_bg_focus = "#28282b"
+theme.taglist_fg_focus = "#D4BE98"
+theme.taglist_bg_focus = "#1B1B1B"
 
 theme.taglist_fg_occupied = "#C7CBCC"
-theme.taglist_fg_urgent = "#ED7572"
-theme.taglist_fg_empty = "#2f2f30"
+theme.taglist_fg_urgent = "#EA6962"
+theme.taglist_fg_empty = "#45403D"
 theme.taglist_spacing = 0
 theme.taglist_font = theme.font_name .. " 11"
 
@@ -98,10 +98,11 @@ theme.notification_border_color = theme.border_focus
 -- theme.menu_submenu_icon = themes_path.."main/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width = dpi(100)
-theme.menu_border_color = "#e8333f"
 theme.menu_border_width = dpi(1)
-theme.menu_bg_focus = "#e8333f"
--- theme.menu_fg_normal = ""
+theme.menu_fg_normal = "#C7CBCC"
+-- theme.menu_fg_focus = "#EA6962"
+theme.menu_fg_focus = "#D4BE98"
+theme.menu_bg_focus = "#1B1B1B"
 -- theme.menu_bg_normal = ""
 -- theme.menu_submenu = " "
 theme.menu_submenu = " "
