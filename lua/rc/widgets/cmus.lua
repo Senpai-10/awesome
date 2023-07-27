@@ -134,7 +134,7 @@ M.widget = {
 	fg = beautiful.widget_fg,
 	-- bg = "#7476e8",
 	bg = beautiful.widget_bg,
-	shape = gears.shape.rounded_rect,
+	shape = gears.shape.rectangle,
 	widget = wibox.container.background,
 }
 
