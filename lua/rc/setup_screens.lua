@@ -3,6 +3,7 @@ local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
+local default = require("lua.rc.default")
 local taglist_buttons = require("lua.rc.taglist_buttons")
 local tasklist_buttons = require("lua.rc.tasklist_buttons")
 
@@ -10,7 +11,17 @@ awful.screen.connect_for_each_screen(function(s)
 	-- Each screen has its own tag table.
 	awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }, s, awful.layout.layouts[1])
 	-- awful.tag(
-	-- 	{ TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON, TAG_ICON },
+	-- 	{
+	-- 		default.tag_icon,
+	-- 		default.tag_icon,
+	-- 		default.tag_icon,
+	-- 		default.tag_icon,
+	-- 		default.tag_icon,
+	-- 		default.tag_icon,
+	-- 		default.tag_icon,
+	-- 		default.tag_icon,
+	-- 		default.tag_icon,
+	-- 	},
 	-- 	s,
 	-- 	awful.layout.layouts[1]
 	-- )
