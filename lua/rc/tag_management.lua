@@ -6,11 +6,9 @@ local M = {}
 
 -- Delete the current tag
 function M.delete_tag()
-	local tags = awful.screen.focused().selected_tags
+	local tag = awful.screen.focused().selected_tag
 
-	for _, tag in pairs(tags) do
-		tag:delete()
-	end
+	tag:delete()
 end
 
 -- Create a new tag at the end of the list
