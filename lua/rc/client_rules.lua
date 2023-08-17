@@ -92,4 +92,5 @@ return {
 	{ rule = { class = "Steam" }, properties = { screen = 1, tag = "7" } },
 	{ rule = { class = "mpv" }, properties = { floating = true, fullscreen = true } },
 	{ rule = { name = "Anime org" }, properties = { floating = true } },
+	{ rule = { class = "Lt" }, properties = { floating = true, raise = true } },
 }
