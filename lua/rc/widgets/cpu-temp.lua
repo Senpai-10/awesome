@@ -29,11 +29,11 @@ local cpu_temp = wibox.widget({
 						widget:set_text(temp)
 
 						if temp > 80 then
-							cpu_temp_clr:set_fg("#FE0000")
+							cpu_temp_clr:set_fg("#fb4934")
 						elseif temp > 60 then
-							cpu_temp_clr:set_fg("#FD8C00")
+							cpu_temp_clr:set_fg("#fe8019")
 						else
-							cpu_temp_clr:set_fg("#32CD31")
+							cpu_temp_clr:set_fg("#b8bb26")
 						end
 					end
 				),
