@@ -20,7 +20,7 @@ M.widget = {
 		widget = wibox.container.margin,
 	},
 	fg = beautiful.widget_fg,
-	bg = beautiful.widget_bg,
+	-- bg = beautiful.widget_bg,
 	shape = gears.shape.rectangle,
 	widget = wibox.container.background,
 }

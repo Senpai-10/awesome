@@ -68,7 +68,8 @@ theme.tag_icon = " " .. " " .. " "
 -- )
 
 theme.taglist_fg_focus = "#D4BE98"
-theme.taglist_bg_focus = "#1B1B1B"
+-- theme.taglist_bg_focus = "#1B1B1B"
+theme.taglist_bg_focus = "#45403D"
 
 theme.taglist_fg_occupied = "#C7CBCC"
 theme.taglist_fg_urgent = "#EA6962"
