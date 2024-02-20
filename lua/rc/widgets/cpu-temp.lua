@@ -8,18 +8,6 @@ local M = {}
 
 local cpu_temp_clr = wibox.widget.background()
 
-local label = wibox.widget({
-	{
-		widget = wibox.widget.textbox,
-		markup = "<b>CPU temp:</b>",
-	},
-	left = 10,
-	right = 10,
-	top = 3,
-	bottom = 3,
-	widget = wibox.container.margin,
-})
-
 local cpu_temp = wibox.widget({
 	{
 		{
