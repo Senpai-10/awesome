@@ -15,7 +15,7 @@ M.widget = {
 				"bash -c 'cat /sys/class/thermal/thermal_zone0/temp'",
 				3,
 				function(widget, stdout)
-					local temp = tonumber(stdout) / 1000
+					local temp = math.floor(tonumber(stdout) / 1000)
 					local color = ""
 
 					if temp > 80 then
