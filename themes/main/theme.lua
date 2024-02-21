@@ -31,6 +31,7 @@ theme.fg_minimize = theme.palette.gray
 
 theme.useless_gap = dpi(5)
 theme.border_width = dpi(2)
+theme.gap_single_client = false
 theme.border_normal = theme.palette.gray
 theme.border_focus = theme.palette.bright_red
 theme.border_marked = theme.palette.bright_yellow
