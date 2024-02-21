@@ -87,8 +87,8 @@ theme.prompt_font = theme.font
 theme.notification_font = theme.font
 theme.notification_fg = theme.fg_normal
 theme.notification_bg = theme.bg_normal
-theme.notification_width = dpi(300)
-theme.notification_height = dpi(80)
+-- theme.notification_width = dpi(300)
+-- theme.notification_height = dpi(80)
 theme.notification_margin = dpi(10)
 theme.notification_border_color = theme.palette.bright_blue
 
