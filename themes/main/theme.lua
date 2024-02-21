@@ -18,11 +18,11 @@ theme.font_name = "Iosevka Storm"
 theme.font_size = "12"
 theme.font = theme.font_name .. " " .. theme.font_size
 
-theme.bg_normal = theme.palette.dark0_hard
-theme.bg_focus = theme.palette.dark0
+theme.bg_normal = theme.palette.dark0
+theme.bg_focus = theme.palette.dark1
 theme.bg_urgent = theme.palette.bright_red
 theme.bg_minimize = theme.palette.gray
-theme.bg_systray = theme.palette.dark0_hard
+theme.bg_systray = theme.palette.dark0
 
 theme.fg_normal = theme.palette.light4
 theme.fg_focus = theme.palette.light0_hard
@@ -36,7 +36,7 @@ theme.border_normal = theme.palette.gray
 theme.border_focus = theme.palette.bright_red
 theme.border_marked = theme.palette.bright_yellow
 
-theme.widget_bg = theme.palette.dark0
+theme.widget_bg = theme.palette.dark1
 theme.widget_fg = theme.palette.light3
 
 -- theme.widget_separator = " ⏽ "
