@@ -8,31 +8,35 @@ local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_xdg_config_home() .. "awesome/themes/"
+local gruvbox = require("themes.main.gruvbox")
 
 local theme = {}
 
+theme.palette = gruvbox.palette
+
 theme.font_name = "Iosevka Storm"
-theme.font = theme.font_name .. " 11"
+theme.font_size = "12"
+theme.font = theme.font_name .. " " .. theme.font_size
 
-theme.bg_normal = "#282828"
-theme.bg_focus = "#1E1E21"
---theme.bg_urgent     = "#ff0000"
-theme.bg_minimize = "#444444"
-theme.bg_systray = theme.bg_normal
+theme.bg_normal = theme.palette.dark0_hard
+theme.bg_focus = theme.palette.dark0
+theme.bg_urgent = theme.palette.bright_red
+theme.bg_minimize = theme.palette.gray
+theme.bg_systray = theme.palette.dark0_hard
 
-theme.fg_normal = "#D4BE98"
-theme.fg_focus = "#ffffff"
-theme.fg_urgent = "#ffffff"
-theme.fg_minimize = "#ffffff"
+theme.fg_normal = theme.palette.light4
+theme.fg_focus = theme.palette.light0_hard
+theme.fg_urgent = theme.palette.bright_red
+theme.fg_minimize = theme.palette.gray
 
 theme.useless_gap = dpi(5)
-theme.border_width = dpi(0)
-theme.border_normal = "#535d6c"
-theme.border_focus = "#EA6962"
-theme.border_marked = "#FFFFFF"
+theme.border_width = dpi(2)
+theme.border_normal = theme.palette.gray
+theme.border_focus = theme.palette.bright_red
+theme.border_marked = theme.palette.bright_yellow
 
-theme.widget_bg = "#1B1B1B"
-theme.widget_fg = "#DDC7A1"
+theme.widget_bg = theme.palette.dark0
+theme.widget_fg = theme.palette.light3
 
 -- theme.widget_separator = " ⏽ "
 -- theme.widget_separator = "  "
@@ -57,25 +61,14 @@ theme.tag_icon = " " .. " " .. " "
 -- Example:
 -- theme.taglist_bg_focus = "#ff0000"
 
--- Generate taglist squares:
+theme.taglist_fg_focus = theme.fg_focus
+theme.taglist_bg_focus = theme.bg_focus
 
--- local taglist_square_size = dpi(4)
--- theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
---     taglist_square_size, theme.fg_normal
--- )
--- theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
---     taglist_square_size, theme.fg_normal
--- )
-
-theme.taglist_fg_focus = "#D4BE98"
--- theme.taglist_bg_focus = "#1B1B1B"
-theme.taglist_bg_focus = "#45403D"
-
-theme.taglist_fg_occupied = "#C7CBCC"
-theme.taglist_fg_urgent = "#EA6962"
-theme.taglist_fg_empty = "#45403D"
+theme.taglist_fg_occupied = theme.fg_focus
+theme.taglist_fg_urgent = theme.palette.bright_red
+theme.taglist_fg_empty = theme.fg_normal
 theme.taglist_spacing = 0
-theme.taglist_font = theme.font_name .. " 11"
+theme.taglist_font = theme.font
 
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 
@@ -90,29 +83,27 @@ theme.prompt_font = theme.font
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
 
+theme.notification_font = theme.font
+theme.notification_fg = theme.fg_normal
+theme.notification_bg = theme.bg_normal
+theme.notification_width = dpi(300)
+theme.notification_height = dpi(80)
+theme.notification_margin = dpi(10)
+theme.notification_border_color = theme.palette.bright_blue
+
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-
-theme.notification_border_color = theme.border_focus
 
 -- theme.menu_submenu_icon = themes_path.."main/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width = dpi(100)
 theme.menu_border_width = dpi(1)
-theme.menu_fg_normal = "#C7CBCC"
--- theme.menu_fg_focus = "#EA6962"
-theme.menu_fg_focus = "#D4BE98"
-theme.menu_bg_focus = "#1B1B1B"
--- theme.menu_bg_normal = ""
+theme.menu_fg_normal = theme.fg_normal
+theme.menu_fg_focus = theme.fg_focus
+theme.menu_bg_focus = theme.bg_focus
 -- theme.menu_submenu = " "
 theme.menu_submenu = " "
--- theme.menu_submenu = " "
-
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path .. "main/titlebar/close_normal.png"

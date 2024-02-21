@@ -15,7 +15,7 @@ function M.setup(screen)
 	screen.bottom_wibox = awful.wibar({
 		position = "bottom",
 		screen = screen,
-		height = 37,
+		height = 32,
 	})
 
 	-- Add widgets to the wibox
