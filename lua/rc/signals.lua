@@ -48,9 +48,9 @@ client.connect_signal("manage", function(c)
 		gears.shape.rounded_rect(cr, w, h, 5)
 	end
 
-	-- if c.floating then
-	-- awful.titlebar.toggle(c)
-	-- end
+	if c.floating then
+		awful.titlebar.show(c)
+	end
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
@@ -101,13 +101,13 @@ client.connect_signal("request::titlebars", function(c)
 	})
 end)
 
--- client.connect_signal("property::floating", function(c)
--- 	if c.floating then
--- 		awful.titlebar.show(c)
--- 	else
--- 		awful.titlebar.hide(c)
--- 	end
--- end)
+client.connect_signal("property::floating", function(c)
+	if c.floating then
+		awful.titlebar.show(c)
+	else
+		awful.titlebar.hide(c)
+	end
+end)
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
