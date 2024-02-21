@@ -26,7 +26,7 @@ M.widget = {
 						color = beautiful.palette.bright_green
 					end
 
-					widget:set_markup(" " .. markup_clr(temp, color) .. "°C")
+					widget:set_markup(" " .. markup_clr(temp .. "°C", color))
 				end
 			),
 		},
