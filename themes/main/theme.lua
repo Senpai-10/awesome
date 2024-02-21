@@ -27,7 +27,7 @@ theme.bg_systray = theme.palette.dark0_hard
 theme.fg_normal = theme.palette.light4
 theme.fg_focus = theme.palette.light0_hard
 theme.fg_urgent = theme.palette.bright_red
-theme.fg_minimize = theme.palette.gray
+theme.fg_minimize = theme.palette.light1
 
 theme.useless_gap = dpi(5)
 theme.border_width = dpi(2)
