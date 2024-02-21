@@ -44,12 +44,24 @@ client.connect_signal("manage", function(c)
 	end
 
 	-- change clients shape
-	c.shape = function(cr, w, h)
-		gears.shape.rounded_rect(cr, w, h, 5)
-	end
+	-- c.shape = function(cr, w, h)
+	-- 	gears.shape.rounded_rect(cr, w, h, 5)
+	-- end
 
 	if c.floating then
-		awful.titlebar.show(c)
+		awful.titlebar.toggle(c)
+	end
+end)
+
+-- No borders when rearranging only 1 non-floating or maximized client
+screen.connect_signal("arrange", function(s)
+	local only_one = #s.tiled_clients == 1
+	for _, c in pairs(s.clients) do
+		if only_one and not c.floating or c.maximized then
+			c.border_width = 0
+		else
+			c.border_width = beautiful.border_width -- your border width
+		end
 	end
 end)
 
