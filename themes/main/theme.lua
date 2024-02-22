@@ -33,8 +33,8 @@ theme.useless_gap = dpi(0)
 theme.border_width = dpi(2)
 theme.gap_single_client = false
 theme.border_normal = theme.palette.gray
-theme.border_focus = theme.palette.bright_red
-theme.border_marked = theme.palette.bright_yellow
+theme.border_focus = theme.palette.bright_yellow
+theme.border_marked = theme.palette.bright_red
 
 theme.widget_bg = theme.palette.dark1
 theme.widget_fg = theme.palette.light3
