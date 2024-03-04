@@ -14,6 +14,12 @@ return {
 		end,
 	},
 	{
+		"Suspend",
+		function()
+			awful.spawn.with_shell("systemctl suspend")
+		end,
+	},
+	{
 		"Quit",
 		function()
 			awesome.quit()
