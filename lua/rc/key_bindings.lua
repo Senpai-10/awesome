@@ -132,7 +132,7 @@ local globalkeys = gears.table.join(
 
 	-- Standard program
 	awful.key({ modkey }, "Return", function()
-		awful.spawn(default.terminal)
+		awful.spawn(default.terminal .. " -e tmux")
 	end, { description = "open a terminal", group = "launcher" }),
 
 	awful.key({ modkey }, "e", function()
