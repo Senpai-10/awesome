@@ -15,7 +15,7 @@ local theme = {}
 theme.palette = gruvbox.palette
 
 theme.font_name = "Iosevka Storm"
-theme.font_size = "12"
+theme.font_size = "10"
 theme.font = theme.font_name .. " " .. theme.font_size
 
 theme.bg_normal = theme.palette.dark0
