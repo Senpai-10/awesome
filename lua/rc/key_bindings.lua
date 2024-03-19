@@ -6,6 +6,7 @@ local beautiful = require("beautiful")
 local mymainmenu = require("lua.rc.menus")
 local default = require("lua.rc.default")
 local modkey = default.modkey
+local altkey = "Mod1"
 local tag_management = require("lua.rc.tag_management")
 
 local globalkeys = gears.table.join(
@@ -223,10 +224,17 @@ local globalkeys = gears.table.join(
 		})
 	end, { description = "lua.rc.execute prompt", group = "awesome" }),
 
-	-- Menubar
+	-- [[Launcher
+	-- Shows a list of executables in $PATH and can launch them (optional in a terminal).
 	awful.key({ modkey }, "r", function()
-		awful.spawn("dmenu_run")
-	end, { description = "run dmenu", group = "launcher" }),
+		awful.spawn("rofi -show run")
+	end, { description = "run launcher", group = "launcher" }),
+
+	-- Same as the run launches, but the list is created from the installed desktop files.
+	awful.key({ modkey, altkey }, "r", function()
+		awful.spawn("rofi -show drun")
+	end, { description = "run launcher", group = "launcher" }),
+	-- Launcher]]
 
 	awful.key({}, "XF86AudioRaiseVolume", function()
 		awful.spawn("playerctl-wrapper volume 0.1+")
