@@ -6,10 +6,21 @@ local gears = require("gears")
 
 local M = {}
 
+local widget = awful.widget.watch("bash -c " .. get_script("ram-usage.sh"), 1)
+
+awful.tooltip({
+	objects = { widget },
+	timer_function = function()
+		local output = assert(io.popen("free -th")):read("*a")
+
+		return output
+	end,
+})
+
 M.widget = {
 	{
 		{
-			widget = awful.widget.watch("bash -c " .. get_script("ram-usage.sh"), 1),
+			widget = widget,
 		},
 		left = 10,
 		right = 10,
