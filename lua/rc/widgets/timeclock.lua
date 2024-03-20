@@ -4,12 +4,12 @@ local gears = require("gears")
 local awful = require("awful")
 
 -- local mytextclock = wibox.widget.textclock("%A %F %l:%M:%S %P ", 1)
-local mytextclock = wibox.widget.textclock("%a %l:%M:%S %P ", 1)
+local mytextclock = wibox.widget.textclock("%a %I:%M:%S %P ", 1)
 
 awful.tooltip({
 	objects = { mytextclock },
 	timer_function = function()
-		return os.date("Today is %A %B %d %Y\n--------\nThe time is %I:%M:%S %p")
+		return os.date("%Y-%m-%d %A")
 	end,
 })
 
