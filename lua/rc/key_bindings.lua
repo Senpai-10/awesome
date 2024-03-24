@@ -242,6 +242,10 @@ local globalkeys = gears.table.join(
 	end, { description = "run launcher", group = "launcher" }),
 	-- Launcher]]
 
+	awful.key({ "Control", "Shift" }, "Escape", function()
+		awful.spawn("gnome-system-monitor")
+	end, { description = "Task manager", group = "awesome" }),
+
 	awful.key({}, "XF86AudioRaiseVolume", function()
 		awful.spawn("playerctl-wrapper volume 0.1+")
 	end, { description = "raise volume", group = "function keys" }),
