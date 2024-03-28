@@ -81,15 +81,14 @@ return {
 	-- { rule = { class = "Firefox" },
 	--   properties = { screen = 1, tag = "2" } },
 
-	--     { rule = { class = "discord" },
-	--         properties = { screen = 1, tag = "9" }
-	--     },
+	{ rule = { class = "discord" }, properties = { screen = 1, tag = " 9 " } },
 
-	--     { rule = { class = "spotify" },
-	--         properties = { screen = 1= "8" }
-	--     },
+	-- { rule = { class = "spotify" },
+	--     properties = { screen = 1= "8" }
+	-- },
 
-	{ rule = { class = "Steam" }, properties = { screen = 1, tag = "7" } },
+	{ rule = { class = "thunderbird-default" }, properties = { screen = 1, tag = " 8 " } },
+	{ rule = { class = "Steam" }, properties = { screen = 1, tag = " 7 " } },
 	{ rule = { class = "mpv" }, properties = { floating = true, fullscreen = true } },
 	{ rule = { name = "Anime org" }, properties = { floating = true } },
 	{ rule = { class = "Lt" }, properties = { floating = true, raise = true } },
