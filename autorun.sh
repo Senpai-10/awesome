@@ -21,11 +21,11 @@ run_or_restart() {
 run nitrogen        nitrogen --restore
 imwheel -kill -b 45
 run flameshot       flameshot
-# run gromit-mpx      gromit-mpx
-# run Discord         discord --start-minimized
+run gromit-mpx      gromit-mpx
+run Discord         discord --start-minimized
 run qpwgraph        qpwgraph ~/patchbay.qpwgraph -am
 run nm-applet       nm-applet --indicator
-# run thunderbird     thunderbird
-# run steam steam -silent
-# run_or_restart discover-overlay discover-overlay
-# cmus-rpc -k
+run thunderbird     thunderbird
+run steam steam -silent
+run_or_restart discover-overlay discover-overlay
+cmus-rpc -k
