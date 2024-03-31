@@ -17,7 +17,7 @@ run_or_restart() {
     fi
 }
 
-# run picom           picom
+run picom           picom
 run nitrogen        nitrogen --restore
 imwheel -kill -b 45
 run flameshot       flameshot
@@ -28,4 +28,5 @@ run nm-applet       nm-applet --indicator
 run thunderbird     thunderbird
 run steam steam -silent
 run_or_restart discover-overlay discover-overlay
+run artha artha
 cmus-rpc -k
