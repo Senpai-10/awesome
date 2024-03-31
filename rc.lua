@@ -12,9 +12,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local default = require("lua.rc.default")
-local treetile = require("treetile")
 local cyclefocus = require("cyclefocus")
-treetile.focusnew = true
 cyclefocus.display_notifications = false
 
 -- {{{ Error handling
@@ -57,7 +55,6 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/main/theme.lu
 awful.layout.layouts = {
 	awful.layout.suit.tile,
 	awful.layout.suit.tile.left,
-	treetile,
 	awful.layout.suit.floating,
 	awful.layout.suit.tile.bottom,
 	awful.layout.suit.tile.top,
@@ -66,7 +63,7 @@ awful.layout.layouts = {
 	awful.layout.suit.spiral,
 	awful.layout.suit.spiral.dwindle,
 	awful.layout.suit.max,
-	awful.layout.suit.max.fullscreen,
+	-- awful.layout.suit.max.fullscreen,
 	awful.layout.suit.magnifier,
 	awful.layout.suit.corner.nw,
 	-- awful.layout.suit.corner.ne,
