@@ -186,7 +186,7 @@ local globalkeys = gears.table.join(
 
 	awful.key({ modkey, "Control" }, "p", function()
 		awful.spawn("flameshot gui")
-	end, { description = "screenshot with selection", group = "scrot" }),
+	end, { description = "screenshot with selection", group = "flameshot" }),
 
 	awful.key({ modkey, "Shift" }, "p", function()
 		awful.spawn.with_shell("picker")
@@ -194,11 +194,11 @@ local globalkeys = gears.table.join(
 
 	awful.key({ modkey, "Control" }, "s", function()
 		awful.spawn("flameshot full")
-	end, { description = "screenshot fullscreen", group = "scrot" }),
+	end, { description = "screenshot fullscreen", group = "flameshot" }),
 
 	awful.key({ modkey, "Control", "Shift" }, "s", function()
 		awful.spawn("flameshot full -c")
-	end, { description = "screenshot fullscreen and save to clipboard", group = "scrot" }),
+	end, { description = "screenshot fullscreen and save to clipboard", group = "flameshot" }),
 
 	awful.key({ modkey, "Control" }, "n", function()
 		local c = awful.client.restore()
