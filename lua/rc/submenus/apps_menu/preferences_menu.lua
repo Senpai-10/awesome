@@ -8,6 +8,12 @@ return {
 		end,
 	},
 	{
+		"qt5ct",
+		function()
+			awful.spawn("qt5ct")
+		end,
+	},
+	{
 		"YAD settings",
 		function()
 			awful.spawn("yad-settings")

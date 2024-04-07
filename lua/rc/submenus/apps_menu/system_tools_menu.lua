@@ -2,15 +2,9 @@ local awful = require("awful")
 
 return {
 	{
-		"system-monitoring-center",
+		"gnome-system-monitor",
 		function()
-			awful.spawn("system-monitoring-center")
-		end,
-	},
-	{
-		"lxtask",
-		function()
-			awful.spawn("lxtask")
+			awful.spawn("gnome-system-monitor")
 		end,
 	},
 	{
@@ -41,12 +35,6 @@ return {
 		"alacritty",
 		function()
 			awful.spawn("alacritty")
-		end,
-	},
-	{
-		"st",
-		function()
-			awful.spawn("st")
 		end,
 	},
 	{
