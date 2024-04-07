@@ -32,12 +32,6 @@ return {
 		end,
 	},
 	{
-		"gnome screenshot",
-		function()
-			awful.spawn("gnome-screenshot --interactive")
-		end,
-	},
-	{
 		"flameshot",
 		function()
 			awful.spawn("flameshot gui")
