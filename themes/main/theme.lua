@@ -8,26 +8,33 @@ local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_xdg_config_home() .. "awesome/themes/"
-local gruvbox = require("themes.main.gruvbox")
-local default_theme = require("themes.main.theme-default")
 
 local theme = {}
 
-theme = gruvbox
+theme.palette = {
+	fg = {
+		normal = "#c0caf5",
+		dark = "#7f88b1",
+		light = "#ccd0e6",
+	},
+	bg = {
+		normal = "#24283b",
+		dark = "#1f2335",
+		light = "#31374e",
+	},
+	bright = {
+		blue = "#3d59a1",
+		purple = "#9d7cd8",
+		orange = "#ff9e64",
+		yellow = "#e0af68",
+		green = "#9ece6a",
+		red = "#f7768e",
+	},
+	gray = "#504945",
+}
 
--- [[ Check for nil
-theme.font_name = theme.font_name or default_theme.font_name
-theme.font_size = theme.font_size or default_theme.font_size
-theme.useless_gap = theme.useless_gap or default_theme.useless_gap
-theme.border_width = theme.border_width or default_theme.border_width
-theme.gap_single_client = theme.gap_single_client or default_theme.gap_single_client
-theme.fg = theme.fg or default_theme.fg
-theme.bg = theme.bg or default_theme.bg
-theme.bright = theme.bright or default_theme.bright
-theme.dark = theme.dark or default_theme.dark
-theme.gray = theme.gray or default_theme.gray
--- ]]
-
+theme.font_name = "Iosevka Storm"
+theme.font_size = "10"
 theme.font = theme.font_name .. " " .. theme.font_size
 
 theme.bg_normal = theme.palette.bg.normal
