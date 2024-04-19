@@ -48,11 +48,11 @@ theme.fg_focus = theme.palette.fg.light
 theme.fg_urgent = theme.palette.bright.red
 theme.fg_minimize = theme.palette.fg.dark
 
-theme.useless_gap = dpi(0)
+theme.useless_gap = dpi(2)
 theme.border_width = dpi(2)
 theme.gap_single_client = false
 theme.border_normal = theme.palette.gray
-theme.border_focus = theme.palette.bright.yellow
+theme.border_focus = theme.palette.bright.blue
 theme.border_marked = theme.palette.bright.red
 
 theme.widget_bg = theme.palette.bg.light
