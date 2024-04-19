@@ -9,35 +9,47 @@ local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_xdg_config_home() .. "awesome/themes/"
 local gruvbox = require("themes.main.gruvbox")
+local default_theme = require("themes.main.theme-default")
 
 local theme = {}
 
-theme.palette = gruvbox.palette
+theme = gruvbox
 
-theme.font_name = "Iosevka Storm"
-theme.font_size = "10"
+-- [[ Check for nil
+theme.font_name = theme.font_name or default_theme.font_name
+theme.font_size = theme.font_size or default_theme.font_size
+theme.useless_gap = theme.useless_gap or default_theme.useless_gap
+theme.border_width = theme.border_width or default_theme.border_width
+theme.gap_single_client = theme.gap_single_client or default_theme.gap_single_client
+theme.fg = theme.fg or default_theme.fg
+theme.bg = theme.bg or default_theme.bg
+theme.bright = theme.bright or default_theme.bright
+theme.dark = theme.dark or default_theme.dark
+theme.gray = theme.gray or default_theme.gray
+-- ]]
+
 theme.font = theme.font_name .. " " .. theme.font_size
 
-theme.bg_normal = theme.palette.dark0
-theme.bg_focus = theme.palette.dark1
-theme.bg_urgent = theme.palette.bright_red
+theme.bg_normal = theme.palette.bg.normal
+theme.bg_focus = theme.palette.bg.light
+theme.bg_urgent = theme.palette.bright.red
 theme.bg_minimize = theme.palette.gray
-theme.bg_systray = theme.palette.dark0
+theme.bg_systray = theme.palette.bg.normal
 
-theme.fg_normal = theme.palette.light4
-theme.fg_focus = theme.palette.light0_hard
-theme.fg_urgent = theme.palette.dark1
-theme.fg_minimize = theme.palette.light1
+theme.fg_normal = theme.palette.fg.normal
+theme.fg_focus = theme.palette.fg.light
+theme.fg_urgent = theme.palette.bright.red
+theme.fg_minimize = theme.palette.fg.dark
 
 theme.useless_gap = dpi(0)
 theme.border_width = dpi(2)
 theme.gap_single_client = false
 theme.border_normal = theme.palette.gray
-theme.border_focus = theme.palette.bright_yellow
-theme.border_marked = theme.palette.bright_red
+theme.border_focus = theme.palette.bright.yellow
+theme.border_marked = theme.palette.bright.red
 
-theme.widget_bg = theme.palette.dark1
-theme.widget_fg = theme.palette.light3
+theme.widget_bg = theme.palette.bg.light
+theme.widget_fg = theme.palette.fg.dark
 
 -- theme.widget_separator = " ⏽ "
 -- theme.widget_separator = "  "
@@ -69,7 +81,7 @@ theme.taglist_bg_urgent = theme.bg_urgent
 
 theme.taglist_fg_occupied = theme.fg_focus
 theme.taglist_fg_urgent = theme.fg_urgent
-theme.taglist_fg_empty = theme.fg_normal
+theme.taglist_fg_empty = theme.palette.fg.dark
 theme.taglist_spacing = 0
 theme.taglist_font = theme.font
 
@@ -92,7 +104,7 @@ theme.notification_bg = theme.bg_normal
 -- theme.notification_width = dpi(300)
 -- theme.notification_height = dpi(80)
 theme.notification_margin = dpi(10)
-theme.notification_border_color = theme.palette.bright_blue
+theme.notification_border_color = theme.palette.bright.blue
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]

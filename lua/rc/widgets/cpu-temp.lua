@@ -19,11 +19,11 @@ M.widget = {
 					local color = ""
 
 					if temp > 80 then
-						color = beautiful.palette.bright_red
+						color = beautiful.palette.bright.red
 					elseif temp > 60 then
-						color = beautiful.palette.bright_orange
+						color = beautiful.palette.bright.orange
 					else
-						color = beautiful.palette.bright_green
+						color = beautiful.palette.bright.green
 					end
 
 					widget:set_markup(" " .. markup_clr(temp .. "°C", color))
