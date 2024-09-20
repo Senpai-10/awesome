@@ -42,8 +42,6 @@ function M.setup(screen)
 				separator,
 				widgets.keyboardlayout,
 				separator,
-				widgets.weather,
-				separator,
 				widgets.uptime,
 				separator,
 				widgets.cpu_usage,
