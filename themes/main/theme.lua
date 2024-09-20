@@ -33,7 +33,7 @@ theme.palette = {
 	gray = "#504945",
 }
 
-theme.font_name = "Iosevka Storm"
+theme.font_name = "FantasqueSansM Nerd Font"
 theme.font_size = "10"
 theme.font = theme.font_name .. " " .. theme.font_size
 

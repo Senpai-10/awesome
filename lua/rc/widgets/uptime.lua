@@ -5,7 +5,7 @@ local gears = require("gears")
 
 local M = {}
 
-local watch_widget = wibox.widget.textbox("神  uptime")
+local watch_widget = wibox.widget.textbox("󱑀  uptime")
 
 awful.tooltip({
 	objects = { watch_widget },
