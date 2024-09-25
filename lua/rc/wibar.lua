@@ -5,6 +5,9 @@ local default = require("lua.rc.default")
 local modkey = default.modkey
 local cpu_usage_widget = require("lua.rc.widgets.cpu-usage").widget
 local ram_usage_widget = require("lua.rc.widgets.ram-usage").widget
+local deficient = require("deficient")
+
+local battery_widget = deficient.battery_widget({})
 
 -- {{{ Wibar
 -- Create a textclock widget
@@ -108,6 +111,7 @@ awful.screen.connect_for_each_screen(function(s)
 			layout = wibox.layout.fixed.horizontal,
 			cpu_usage_widget,
 			ram_usage_widget,
+			battery_widget,
 			mykeyboardlayout,
 			wibox.widget.systray(),
 			mytextclock,
