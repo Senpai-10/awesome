@@ -56,6 +56,15 @@ awful.rules.rules = {
 				"Wpa_gui",
 				"veromix",
 				"xtightvncviewer",
+				"feh",
+				"Eog",
+				"Nsxiv",
+				"gnome-calculator",
+				"dotm-gui",
+				"Yad",
+				"Nitrogen",
+				"Mytodo",
+				"Manga-reader",
 			},
 
 			-- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -67,6 +76,7 @@ awful.rules.rules = {
 				"AlarmWindow", -- Thunderbird's calendar.
 				"ConfigManager", -- Thunderbird's about:config.
 				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+				"simplescreenrecorder",
 			},
 		},
 		properties = { floating = true },
@@ -78,5 +88,9 @@ awful.rules.rules = {
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
 	--   properties = { screen = 1, tag = "2" } },
+
+	{ rule = { class = "discord" }, properties = { screen = 1, tag = " 9 " } },
+
+	{ rule = { class = "mpv" }, properties = { floating = true } },
 }
 -- }}}
