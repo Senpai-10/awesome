@@ -3,12 +3,14 @@ local awful = require("awful")
 local wibox = require("wibox")
 local default = require("lua.rc.default")
 local modkey = default.modkey
+local cpu_usage_widget = require("lua.rc.widgets.cpu-usage").widget
+local ram_usage_widget = require("lua.rc.widgets.ram-usage").widget
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+local mytextclock = wibox.widget.textclock("%a %I:%M:%S %P ", 1)
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+local mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -104,6 +106,8 @@ awful.screen.connect_for_each_screen(function(s)
 		s.mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			cpu_usage_widget,
+			ram_usage_widget,
 			mykeyboardlayout,
 			wibox.widget.systray(),
 			mytextclock,
