@@ -15,6 +15,13 @@ client.connect_signal("manage", function(c)
 		awful.placement.no_offscreen(c)
 	end
 
+	-- Center floating clients
+	if c.floating then
+		awful.placement.centered(c)
+		awful.placement.no_overlap(c)
+		awful.placement.no_offscreen(c)
+	end
+
 	awful.titlebar.hide(c)
 end)
 
