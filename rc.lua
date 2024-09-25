@@ -6,14 +6,12 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+-- Widget and layout library
+local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
-local menubar = require("menubar")
-local default = require("lua.rc.default")
-local cyclefocus = require("cyclefocus")
-cyclefocus.display_notifications = false
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -48,39 +46,32 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-
-beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/main/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/default/theme.lua")
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
 	awful.layout.suit.tile,
 	awful.layout.suit.tile.left,
-	awful.layout.suit.floating,
 	awful.layout.suit.tile.bottom,
 	awful.layout.suit.tile.top,
-	awful.layout.suit.fair,
-	awful.layout.suit.fair.horizontal,
-	awful.layout.suit.spiral,
 	awful.layout.suit.spiral.dwindle,
-	awful.layout.suit.max,
+	awful.layout.suit.spiral,
+	awful.layout.suit.floating,
+	-- awful.layout.suit.fair,
+	-- awful.layout.suit.fair.horizontal,
+	-- awful.layout.suit.max,
 	-- awful.layout.suit.max.fullscreen,
-	awful.layout.suit.magnifier,
-	awful.layout.suit.corner.nw,
+	-- awful.layout.suit.magnifier,
+	-- awful.layout.suit.corner.nw,
 	-- awful.layout.suit.corner.ne,
 	-- awful.layout.suit.corner.sw,
 	-- awful.layout.suit.corner.se,
 }
 -- }}}
 
-local mymainmenu = require("lua.rc.menus")
+require("lua.rc.wibar")
 
--- Menubar configuration
-menubar.utils.terminal = default.terminal -- Set the terminal for applications that require it
--- }}}
-
--- Create a wibox for each screen and add it
-require("lua.rc.setup_screens")
--- }}}
+require("lua.rc.menu")
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
@@ -92,21 +83,10 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
--- {{{ Key bindings
-local globalkeys = require("lua.rc.key_bindings")
--- }}}
+require("lua.rc.global_keys")
 
--- Set keys
-root.keys(globalkeys)
--- }}}
-
--- {{{ Rules
--- Rules to apply to new clients (through the "manage" signal).
-awful.rules.rules = require("lua.rc.client_rules")
--- }}}
+require("lua.rc.client_rules")
 
 require("lua.rc.signals")
 
--- Autostart Apps
 awful.spawn.with_shell(gears.filesystem.get_configuration_dir() .. "autorun.sh")
--- awful.spawn.with_shell("~/.config/awesome/autorun.sh")

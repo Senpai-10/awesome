@@ -1,10 +1,27 @@
-local awful = require("awful")
-local beautiful = require("beautiful")
 local clientkeys = require("lua.rc.client_keys")
+local awful = require("awful")
+local gears = require("gears")
+local beautiful = require("beautiful")
 
-local clientbuttons = require("lua.rc.client_buttons")
+local modkey = require("lua.rc.default").modkey
 
-return {
+clientbuttons = gears.table.join(
+	awful.button({}, 1, function(c)
+		c:emit_signal("request::activate", "mouse_click", { raise = true })
+	end),
+	awful.button({ modkey }, 1, function(c)
+		c:emit_signal("request::activate", "mouse_click", { raise = true })
+		awful.mouse.client.move(c)
+	end),
+	awful.button({ modkey }, 3, function(c)
+		c:emit_signal("request::activate", "mouse_click", { raise = true })
+		awful.mouse.client.resize(c)
+	end)
+)
+
+-- {{{ Rules
+-- Rules to apply to new clients (through the "manage" signal).
+awful.rules.rules = {
 	-- All clients will match this rule.
 	{
 		rule = {},
@@ -40,7 +57,6 @@ return {
 				"veromix",
 				"xtightvncviewer",
 				"feh",
-				"nitrogen",
 				"Eog",
 				"Nsxiv",
 				"gnome-calculator",
@@ -66,16 +82,8 @@ return {
 		properties = { floating = true },
 	},
 
-	-- Center any floating window on the screen
-	{
-		rule_any = { floating = true },
-		properties = {
-			placement = awful.placement.centered + awful.placement.no_overlap + awful.placement.no_offscreen,
-		},
-	},
-
 	-- Add titlebars to normal clients and dialogs
-	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
+	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = true } },
 
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
@@ -83,13 +91,6 @@ return {
 
 	{ rule = { class = "discord" }, properties = { screen = 1, tag = " 9 " } },
 
-	-- { rule = { class = "spotify" },
-	--     properties = { screen = 1= "8" }
-	-- },
-
-	{ rule = { class = "thunderbird-default" }, properties = { screen = 1, tag = " 8 " } },
-	{ rule = { class = "Steam" }, properties = { screen = 1, tag = " 7 " } },
-	{ rule = { class = "mpv" }, properties = { floating = true, fullscreen = true } },
-	{ rule = { name = "Anime org" }, properties = { floating = true } },
-	{ rule = { class = "Lt" }, properties = { floating = true, raise = true } },
+	{ rule = { class = "mpv" }, properties = { floating = true } },
 }
+-- }}}

@@ -2,28 +2,15 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local gears = require("gears")
-local get_script = require("lua.helpers.get_script").get_script
-local markup_clr = require("lua.helpers.markup_clr")
+local get_script = require("lua.helpers").get_script
+local markup_clr = require("lua.helpers").markup_clr
 
 local M = {}
 
 M.widget = {
 	{
 		{
-			widget = awful.widget.watch("bash -c " .. get_script("cpu-usage.sh"), 3, function(widget, stdout)
-				local cpu_usage = tonumber(stdout)
-				local color = ""
-
-				if cpu_usage > 90 then
-					color = beautiful.palette.bright.red
-				elseif cpu_usage > 60 then
-					color = beautiful.palette.bright.orange
-				else
-					color = beautiful.palette.bright.green
-				end
-
-				widget:set_markup("  " .. markup_clr(cpu_usage .. "%", color))
-			end),
+			widget = awful.widget.watch("bash -c " .. get_script("cpu-usage.sh"), 3),
 		},
 		left = 10,
 		right = 10,

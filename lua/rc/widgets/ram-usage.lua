@@ -1,7 +1,7 @@
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
-local get_script = require("lua.helpers.get_script").get_script
+local get_script = require("lua.helpers").get_script
 local gears = require("gears")
 
 local M = {}

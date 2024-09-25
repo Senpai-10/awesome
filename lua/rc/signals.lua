@@ -1,69 +1,46 @@
+local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
-local gears = require("gears")
-
-local function get_tags_menu_items(c)
-	local output = {}
-
-	for index, tag in pairs(root.tags()) do -- luacheck: globals root
-		table.insert(output, {
-			-- [idx] tag_name
-			"["
-				.. index
-				.. "]"
-				.. " "
-				.. tag.name,
-			function()
-				c:move_to_tag(tag) -- luacheck: globals root
-			end,
-		})
-	end
-
-	return output
-end
 
 -- {{{ Signals
-
--- tag.connect_signal("property::selected", function (tag)
---     if tag.name == TAG_ICON then
---         tag.name = TAG_ICON_SELECTED
---     end
---     naughty.notify({text='some message'})
--- end)
-
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function(c)
 	-- Set the windows at the slave,
 	-- i.e. put it at the end of others instead of setting it master.
-	if not awesome.startup then
-		awful.client.setslave(c)
-	end
+	-- if not awesome.startup then awful.client.setslave(c) end
 
 	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
 		-- Prevent clients from being unreachable after screen count changes.
 		awful.placement.no_offscreen(c)
 	end
 
-	-- change clients shape
-	-- c.shape = function(cr, w, h)
-	-- 	gears.shape.rounded_rect(cr, w, h, 5)
-	-- end
-
+	-- Center floating clients
 	if c.floating then
-		awful.titlebar.toggle(c)
+		awful.placement.centered(c)
+		awful.placement.no_overlap(c)
+		awful.placement.no_offscreen(c)
+	end
+
+	awful.titlebar.hide(c)
+end)
+
+-- turn titlebar on when client is floating
+-------------------------------------------------------------------------------
+client.connect_signal("property::floating", function(c)
+	if c.floating and not (c.requests_no_titlebar or c.fullscreen) then
+		awful.titlebar.show(c)
+	else
+		awful.titlebar.hide(c)
 	end
 end)
 
--- No borders when rearranging only 1 non-floating or maximized client
-screen.connect_signal("arrange", function(s)
-	local only_one = #s.tiled_clients == 1
-	for _, c in pairs(s.clients) do
-		if only_one and not c.floating or c.maximized then
-			c.border_width = 0
-		else
-			c.border_width = beautiful.border_width -- your border width
-		end
+-- turn tilebars on when layout is floating
+-------------------------------------------------------------------------------
+awful.tag.attached_connect_signal(nil, "property::layout", function(t)
+	local float = t.layout.name == "floating"
+	for _, c in pairs(t:clients()) do
+		c.floating = float
 	end
 end)
 
@@ -74,13 +51,6 @@ client.connect_signal("request::titlebars", function(c)
 		awful.button({}, 1, function()
 			c:emit_signal("request::activate", "titlebar", { raise = true })
 			awful.mouse.client.move(c)
-		end),
-		awful.button({}, 2, function()
-			client.focus = c
-			c:raise()
-
-			local tags_menu = awful.menu.new(get_tags_menu_items(c))
-			tags_menu:toggle()
 		end),
 		awful.button({}, 3, function()
 			c:emit_signal("request::activate", "titlebar", { raise = true })
@@ -103,24 +73,15 @@ client.connect_signal("request::titlebars", function(c)
 			layout = wibox.layout.flex.horizontal,
 		},
 		{ -- Right
-			-- awful.titlebar.widget.floatingbutton(c),
-			-- awful.titlebar.widget.stickybutton(c),
-			-- awful.titlebar.widget.ontopbutton(c),
-			awful.titlebar.widget.minimizebutton(c),
+			awful.titlebar.widget.floatingbutton(c),
 			awful.titlebar.widget.maximizedbutton(c),
+			awful.titlebar.widget.stickybutton(c),
+			awful.titlebar.widget.ontopbutton(c),
 			awful.titlebar.widget.closebutton(c),
 			layout = wibox.layout.fixed.horizontal(),
 		},
 		layout = wibox.layout.align.horizontal,
 	})
-end)
-
-client.connect_signal("property::floating", function(c)
-	if c.floating then
-		awful.titlebar.show(c)
-	else
-		awful.titlebar.hide(c)
-	end
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
@@ -129,12 +90,9 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 client.connect_signal("focus", function(c)
-	-- awful.titlebar.show(c)
 	c.border_color = beautiful.border_focus
 end)
-
 client.connect_signal("unfocus", function(c)
-	-- awful.titlebar.hide(c)
 	c.border_color = beautiful.border_normal
 end)
 -- }}}
