@@ -2,10 +2,9 @@
 
 Battery indicator widget for awesome window manager.
 
-![Screenshot](/battery-widget/screenshot.png?raw=true "Screenshot")
+![Screenshot](/battery-widget/screenshot.png?raw=true 'Screenshot')
 
 Displays status information from `/sys/class/power_supply`.
-
 
 ### Dependencies
 
@@ -15,7 +14,6 @@ Optionally, in order to receive status updates, you will also need `acpid`:
 pacman -S acpid
 systemctl enable --now acpid
 ```
-
 
 ### Usage
 
@@ -48,7 +46,6 @@ not specified, the call will return a table containing widgets for each of the
 battery adapters in `/sys/class/power_supply`. In that case if there are no
 batteries an empty table will be returned and no error will occur on machines
 without batteries.
-
 
 ### Options
 

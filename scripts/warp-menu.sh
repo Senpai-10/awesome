@@ -12,7 +12,6 @@ COMMANDS=(
 COMMAND="$(printf '%s\n' "${COMMANDS[@]}" | rofi -dmenu)"
 
 if [[ -z "${COMMAND}" ]]; then
-    notify-send "Error" "Invaild command"
     exit 1
 fi
 

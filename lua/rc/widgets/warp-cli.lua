@@ -6,7 +6,9 @@ local gears = require("gears")
 
 local M = {}
 
-local widget = awful.widget.watch("bash -c " .. get_script("warp-status.sh"), 3)
+local widget = awful.widget.watch("bash -c " .. get_script("warp-status.sh"), 3, function(w, stdout)
+	w:set_markup(stdout)
+end)
 
 widget:buttons(awful.util.table.join(awful.button({}, 1, function()
 	awful.spawn(get_script("warp-menu.sh"))
