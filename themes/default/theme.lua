@@ -11,7 +11,7 @@ local themes_path = gfs.get_xdg_config_home() .. "awesome/themes/"
 
 local theme = {}
 
-theme.font = "FantasqueSansM Nerd Font 10"
+theme.font = "FantasqueSansM Nerd Font 8"
 
 theme.bg_normal = "#222222"
 theme.bg_focus = "#535d6c"
