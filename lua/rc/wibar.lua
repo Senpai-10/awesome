@@ -5,6 +5,7 @@ local default = require("lua.rc.default")
 local modkey = default.modkey
 local cpu_usage_widget = require("lua.rc.widgets.cpu-usage").widget
 local ram_usage_widget = require("lua.rc.widgets.ram-usage").widget
+local warp_cli_widget = require("lua.rc.widgets.warp-cli").widget
 local deficient = require("deficient")
 
 local battery_widget = deficient.battery_widget({})
@@ -109,6 +110,7 @@ awful.screen.connect_for_each_screen(function(s)
 		s.mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			warp_cli_widget,
 			cpu_usage_widget,
 			ram_usage_widget,
 			battery_widget,
