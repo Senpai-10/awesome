@@ -12,7 +12,7 @@ local battery_widget = deficient.battery_widget({})
 
 -- {{{ Wibar
 -- Create a textclock widget
-local mytextclock = wibox.widget.textclock("%a %I:%M:%S %P ", 1)
+local mytextclock = wibox.widget.textclock("%a %I:%M:%S %P %F ", 1)
 -- Keyboard map indicator and switcher
 local mykeyboardlayout = awful.widget.keyboardlayout()
 
